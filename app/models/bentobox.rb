@@ -1,8 +1,10 @@
 class Bentobox < ApplicationRecord
     has_many :menu_items
     # has_many :users, through: :menu_items
-
-    # add method for total price
+    
+    validates :name, presence: true
+    validates :name, uniqueness: true
+    validates :item_type, inclusion: { in: %w(Lunch Dinner) }
 
     def total_price
         self.number_of_sides * 3 + self.number_of_entrees * 7 + self.number_of_snacks * 2 + self.number_of_drinks  
