@@ -1,4 +1,4 @@
-<h1>Adventure Bento Boxes</h1>
+<h2>Here are the Bento Boxes: </h2>
 
 <% @bentos.each do |bento| %>
     <%= link_to "#{bento.name}", bentobox_path(bento) %> Type: <%= bento.bento_type %>

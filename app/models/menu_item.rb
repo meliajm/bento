@@ -2,6 +2,14 @@ class MenuItem < ApplicationRecord
     belongs_to :bentobox
     # belongs_to :user
 
+    
+
+    # def order_array_by_entree_first
+    #     if self.item_type == "Entree"
+    #         change.sort { |a, b| a <=> b }
+
+    # end
+
 
 
     # methods to add in later

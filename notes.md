@@ -32,3 +32,5 @@ not sure user needs a show page, can do straight to menu? or from show page link
 14. [] can have 2 side extra instead of entree
 15. [] snack section - omochi, onigiri
 16. [] add validations to models
+17. [] add user model back in
+18. [] order bento with entree first
