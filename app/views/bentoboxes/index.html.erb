@@ -1,14 +1,18 @@
 <h1>Adventure Bento Boxes</h1>
 
 <% @bentos.each do |bento| %>
-    <li>Name: <%= bento.name %></li>
+    <p>Name: <%= bento.name %></p> 
     <li>Type: <%= bento.bento_type %></li>
-            <%= binding.pry %>
 
-    <li>Menu Items: <%= bento.menu_items.name %></li>
     
-                <br>
+    <div>Menu Items:</div>
+        <% bento.menu_items.each do |menu_item| %>
+            <li>Name: <%= menu_item.name %></li>
+            <li>Price: <%= menu_item.price %></li>
+            <li>Item Type: <%= menu_item.item_type %></li>
+    <% end %>
 
+                
 <% end %>
 
 
