@@ -2,11 +2,15 @@
 
 <% @bentos.each do |bento| %>
     <li>Name: <%= bento.name %></li>
-    <li>Type: <%= bento.type %></li>
+    <li>Type: <%= bento.bento_type %></li>
+            <%= binding.pry %>
+
+    <li>Menu Items: <%= bento.menu_items.name %></li>
     
+                <br>
+
 <% end %>
 
-<%= render "menu_items/menu" %>
 
 
 

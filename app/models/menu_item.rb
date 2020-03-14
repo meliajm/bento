@@ -1,6 +1,6 @@
 class MenuItem < ApplicationRecord
     belongs_to :bentobox
-    belongs_to :user
+    # belongs_to :user
 
 
 

@@ -27,6 +27,8 @@ Bento type (lunch or dinner for example)
 not sure user needs a show page, can do straight to menu? or from show page link to menu
 
 12. [] index for menu
+    add relations to bentos and menu items and seed 
 13. [] veggie options, gluten free
 14. [] can have 2 side extra instead of entree
 15. [] snack section - omochi, onigiri
+16. [] add validations to models

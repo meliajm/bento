@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_033227) do
 
   create_table "bentoboxes", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "bento_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_033227) do
   create_table "menu_items", force: :cascade do |t|
     t.string "name"
     t.integer "price"
-    t.string "type"
-    t.integer "user_id"
+    t.string "item_type"
     t.integer "bentobox_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -3,5 +3,12 @@
 <% @menu_items.each do |menu_item| %>
     <li>Name: <%= menu_item.name %></li>
     <li>Price: <%= menu_item.name %></li>
-    <li>Type: <%= menu_item.type %></li>
+    <li>Type: <%= menu_item.item_type %></li>
 <% end %>
+
+<div>Menu Items:</div>
+        <% bento.menu_items.each do |menu_item| %>
+            <li>Name: <%= menu_item.name %></li>
+            <li>Price: <%= menu_item.price %></li>
+            <li>Item Type: <%= menu_item.item_type %></li>
+    <% end %>
