@@ -9,4 +9,8 @@ class BentoboxesController < ApplicationController
         @bento = Bentobox.find_by(id: params[:id])
     end
 
+    def total_price
+        @bento = Bentobox.find_by(id: params[:id])
+    end
+
 end

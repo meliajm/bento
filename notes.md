@@ -33,4 +33,5 @@ not sure user needs a show page, can do straight to menu? or from show page link
 15. [x] snack section - omochi, onigiri
 16. [] add validations to models
 17. [] add user model back in
-18. [] order bento with entree first
+18. [x] order bento with entree first
+19. [] refactor total price

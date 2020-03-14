@@ -4,10 +4,15 @@
     <%= link_to "#{bento.name}", bentobox_path(bento) %> Type: <%= bento.bento_type %>
 
     <div>Menu Items:</div>
-        <% bento.menu_items.each do |menu_item| %>
-            <li>Name: <%= menu_item.name %></li>
+        <% bento.menu_items.order_array_by_item_type.each do |menu_item| %>
+        <% if menu_item.item_type == 'Entree' %>
+            <li><strong> Name: <%= menu_item.name %></strong></li>
+        <% else %> 
+            <li>Item Type: <%= menu_item.name %></li>
+
+        <% end %> 
             <li>Price: <%= menu_item.price %></li>
-            <li>Item Type: <%= menu_item.item_type %></li>
+            <li>Item Type: <%= menu_item.item_type %></li>     
     <% end %> 
     <br>      
 <% end %>

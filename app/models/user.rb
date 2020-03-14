@@ -4,8 +4,7 @@ class User < ApplicationRecord
   # has_many :bentoboxes, through: :menu_items
 
   validates :name, presence: true
-  validates :email, presence: true 
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true 
 
   # need any methods here? maybe in future
 end
