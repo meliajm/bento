@@ -17,3 +17,6 @@ Bento type (lunch or dinner for example)
 
 [x] 8. get gems
 [] 9. compare with amusement park
+
+[] 10. sessions controller for login
+[] 11. user model
