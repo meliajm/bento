@@ -1,10 +1,19 @@
 [x] 1. github omniauth
-[] 2. many to many
+[x] 2. many to many
 [] 3. rails amusement park css
 [] 4. credit card transactions
 [x] 5. push to github
 
-[] 6. rails generate models, controllers, views
+[x] 6. rails generate models, controllers, views
+rails g resource Account name:string payment_status:string --no-test-framework
+rails g resource Bentobox name:string type:string --no-test-framework
+rails g resource User name:string email:string password:digest
+rails g resource MenuItem name:string price:integer type:string bentobox_id:integer user_id integer--no-test-framework
+
+menu_item type: side or main entree
+build your own bento versus premade items together?
+Bento type (lunch or dinner for example)
 [] 7. build routes
 
-[] 8. get gems
+[x] 8. get gems
+[] 9. compare with amusement park

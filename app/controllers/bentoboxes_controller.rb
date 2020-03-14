@@ -1,0 +1,2 @@
+class BentoboxesController < ApplicationController
+end
