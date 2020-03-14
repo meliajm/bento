@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id
           redirect_to user_path(@user)
       elsif session[:name]
-        @user = session[:omniauth_data]["uid"]
+        @user = User.find_by(name: session[:name])
+        session[:user_id] = session[:omniauth_data]["uid"]
         redirect_to user_path(@user)
       else
           redirect_to '/'
