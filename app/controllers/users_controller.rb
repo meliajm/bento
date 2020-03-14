@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 
     def show
         # binding.pry
-        if !session[:omniauth_data]
+        # if !session[:omniauth_data]
             @user = User.find_by(id: params[:id]) 
             redirect_to '/' if !session[:user_id] #this could be a problem from omniauth
-        else
-            redirect_to '/'
-        end
+        # else
+        #     redirect_to '/'
+        # end
     end
 
     def new
