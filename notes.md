@@ -1,4 +1,4 @@
-[] 1. github omniauth
+[x] 1. github omniauth
 [] 2. many to many
 [] 3. rails amusement park css
 [] 4. credit card transactions

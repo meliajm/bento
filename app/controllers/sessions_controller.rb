@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     # This is required because of a quirk the "developer" authentication
     # strategy. We'll remove this when we move to a "real" provider.
-    skip_before_action :verify_authenticity_token, only: :create
+    # skip_before_action :verify_authenticity_token, only: :create
   
     def create
       # After entering a name and email value in the /auth/developer
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # the authentication data object that comes from the "developer"
       # strategy. In production, we'll swap this strategy for something
       # like 'github' or 'facebook' or some other authentication broker
-      pp request.env['omniauth.auth']
+    #   pp request.env['omniauth.auth']
   
       # We're going to save the authentication information in the session
       # for demonstration purposes. We want to keep this data somewhere so that,
