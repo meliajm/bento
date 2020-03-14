@@ -2,6 +2,7 @@
 [x] 2. many to many
 [] 3. rails amusement park css
 [] 4. credit card transactions
+        add admin to user model to edit menu items and bentos
 [x] 5. push to github
 
 [x] 6. rails generate models, controllers, views
@@ -19,4 +20,4 @@ Bento type (lunch or dinner for example)
 [] 9. compare with amusement park
 
 [] 10. sessions controller for login
-[] 11. user model
+[x] 11. user, bento, menu models
