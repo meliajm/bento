@@ -1,16 +1,15 @@
-
 <% if session[:omniauth_data] %>
   <p>Welcome <%= session[:omniauth_data]['info']['nickname'] %> </p>
+  <p><%= link_to "Menu Items", menu_items_path %></p>
 
 <% elsif session[:user_id] %>
   <p>Welcome <%= session[:user_id].name %> </p>
+  <p><%= link_to "Menu Items", menu_items_path %></p>
 
- 
+
 <% else %>
-  <p>Try <%= link_to 'Sign Up', signin_path%>.</p>
-  <p>Try <%= link_to 'Signing in with GitHub ', '/auth/github'%>.</p>
-
+  <p><%= link_to 'Sign Up', signin_path%>.</p>
+  <p><%= link_to 'Signing in with GitHub ', '/auth/github'%>.</p>
 <% end %>
-
 
 <%= link_to "Log Out", logout_path, method: 'post' if session[:user_id] || session[:omniauth_data] %>

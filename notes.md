@@ -14,10 +14,12 @@ rails g resource MenuItem name:string price:integer type:string bentobox_id:inte
 menu_item type: side or main entree
 build your own bento versus premade items together?
 Bento type (lunch or dinner for example)
-[] 7. build routes
+[x] 7. build routes
 
 [x] 8. get gems
 [] 9. compare with amusement park
 
-[] 10. sessions controller for login
+[x] 10. sessions controller for login
 [x] 11. user, bento, menu models
+
+not sure user needs a show page, can do straight to menu? or from show page link to menu
