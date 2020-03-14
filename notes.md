@@ -3,6 +3,8 @@
 [] 3. rails amusement park css
 [] 4. credit card transactions
         add admin to user model to edit menu items and bentos
+        icons for bento boxes
+        kpi tracking
 [x] 5. push to github
 
 [x] 6. rails generate models, controllers, views
@@ -23,3 +25,8 @@ Bento type (lunch or dinner for example)
 [x] 11. user, bento, menu models
 
 not sure user needs a show page, can do straight to menu? or from show page link to menu
+
+12. [] index for menu
+13. [] veggie options, gluten free
+14. [] can have 2 side extra instead of entree
+15. [] snack section - omochi, onigiri

@@ -1,10 +1,10 @@
 <% if session[:omniauth_data] %>
   <p>Welcome <%= session[:omniauth_data]['info']['nickname'] %> </p>
-  <p><%= link_to "Menu Items", menu_items_path %></p>
+  <p><%= link_to "Menu", bentoboxes_path %></p>
 
 <% elsif session[:user_id] %>
   <p>Welcome <%= session[:user_id].name %> </p>
-  <p><%= link_to "Menu Items", menu_items_path %></p>
+  <p><%= link_to "Menu", bentoboxes_path %></p>
 
 
 <% else %>
