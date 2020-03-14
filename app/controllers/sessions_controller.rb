@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
 
     def create
       # not sure about this because of omniauth plus reg auth
-      session[:name] = request.env['omniauth.auth']['info']['name']
-      session[:omniauth_data] = request.env['omniauth.auth']
-      @user = User.find_by(name: params[:user][:name])
+      @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+      # session[:name] = request.env['omniauth.auth']['info']['name']
+      # session[:omniauth_data] = request.env['omniauth.auth']
+      # binding.pry
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user)
@@ -21,7 +22,9 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      session.delete :user_id
+      session.delete :user_id 
+      session.delete :omniauth_data
+
       redirect_to '/'
   end
 end
