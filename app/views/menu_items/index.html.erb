@@ -1,7 +1,1 @@
-<h1>Menu Items</h1>
-<% @menu_items.order_array_by_item_type.each do |menu_item| %>
-    <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
-    <li>Price: <%= menu_item.price %></li>
-    <li>Type: <%= menu_item.item_type %></li>
-    <br>
-<% end %>
+<%= render partial: 'menu_items/index', locals: {menu_items: @menu_items} %>

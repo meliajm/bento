@@ -2,6 +2,6 @@
 <li>Bento Type: <%= @bento.bento_type %></li>
 <li>Total Price: <%= @bento.total_price %></li>
 
-<%= render partial: 'menu_items/form', locals: {menu_item: @bento.menu_item} %>
+<%= render partial: 'menu_items/index', locals: {menu_items: @bento.menu_items} %>
 <%= link_to "Order", new_order_path %> 
 
