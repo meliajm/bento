@@ -40,6 +40,22 @@ not sure user needs a show page, can do straight to menu? or from show page link
 20. [] add admin to user
 21. [] make login
 
+so here's the plan
+user goes to bento box new page
+from this form user can add menu items from checkboxes maybe
+then creates new bento box
+
+user then goes to order page
+can select bentos from checkboxes again
+goes to show page of order with edit link
+places order
+
+only admin can make new menu items
+
+
+
+
+
 # rachel_bento.menu_items << [spicy_tofu, white_rice, veg_temp, avo_roll, j_salad, tamagoyaki]
 # kiele_bento.menu_items << [miso_butterfish, white_rice, gyoza, cali_roll, miso_soup, tamagoyaki]
 # hoodie_bento.menu_items << [miso_salmon, seaweed_salad, shrimp_veg_temp, avo_roll, j_salad, miso_soup]

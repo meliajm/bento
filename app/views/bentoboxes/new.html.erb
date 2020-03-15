@@ -1,0 +1,20 @@
+<h4>Baby, you can drive my cart</h4>
+
+<%= form_for(@bento) do |f| %>
+    <p>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+    </p>
+
+    <p>
+    <%= f.label :bento_type%>
+    <%= f.text_field :bento_type%>
+    </p>
+
+
+    <p>
+        <%= f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name %>
+    </p>
+
+    <%= f.submit %>
+<% end %>
