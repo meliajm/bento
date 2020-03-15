@@ -1,5 +1,7 @@
 class BentoboxesController < ApplicationController
 
+    before_action :set_bento, only: [:show, :edit, :update]
+
     def new
         @bento = Bentobox.new
         @menu_items = MenuItem.all
@@ -23,7 +25,14 @@ class BentoboxesController < ApplicationController
     end
 
     def show
-        @bento = Bentobox.find_by(id: params[:id])
+    end
+
+    def edit
+    end
+    
+    def update
+        @bento.update(bento_params)
+        redirect_to bentobox_path(@bento)
     end
 
     def total_price
@@ -35,5 +44,10 @@ class BentoboxesController < ApplicationController
     def bento_params
         params.require(:bentobox).permit(:name, :bento_type, menu_item_ids: [])
     end
+
+    def set_bento
+        @bento = Bentobox.find_by(id: params[:id])
+    end
+
 
 end

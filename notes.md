@@ -61,6 +61,8 @@ accepts_nested_attributes_for :categories
 
 how is bento associating menu items and what is the deal with order where it is not?!!!!
 
+[] crud for bento boxes
+
 
 
 
