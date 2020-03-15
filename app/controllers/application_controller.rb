@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
 
-  private 
+    def current_user
+        # binding.pry
+        User.find(session[:user_id]) 
+        # || User.create(session[:omniauth_data]["uid"])
+    end
 
-  def current_user
-    # binding.pry
-    User.find(session[:user_id]) 
-    # || User.create(session[:omniauth_data]["uid"])
-  end
+    def logged_in?
+        !!session[:user_id]
+    end
+
+  
 
 end

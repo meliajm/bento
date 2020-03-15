@@ -34,10 +34,12 @@ not sure user needs a show page, can do straight to menu? or from show page link
 14. [] can have 2 side extra instead of entree
 15. [x] snack section - omochi, onigiri
 16. [x] add validations to models
-17. [] add user model back in
+17. [x] add user model back in
 18. [x] order bento with entree first
 19. [] refactor total price
 20. [] add admin to user
+
+
 21. [] make login
 
 [x] so here's the plan
@@ -45,23 +47,25 @@ user goes to bento box new page
 from this form user can add menu items from checkboxes 
 then creates new bento box
 
-[] total price is not calculated for bentos created this way
+[x] total price is not calculated for bentos created this way - got this figured out
 
 [] user then goes to order page
 can select bentos from checkboxes again
 goes to show page of order with edit link
 places order
 
-[] need to figure out how to save array of ids to bentos and orders
+[x] need to figure out how to save array of ids to bentos and orders
 accepts_nested_attributes_for :categories
 
 
 [] only admin can make new menu items
-[] partials
+[x] partials
 
 how is bento associating menu items and what is the deal with order where it is not?!!!!
 
 [] crud for bento boxes
+[x] update for bento is not deleting items from list
+[] security
 
 
 

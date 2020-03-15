@@ -20,7 +20,7 @@ miso_soup = MenuItem.create(name: 'Miso Soup', price: 3, item_type: 'Side')
 tamagoyaki = MenuItem.create(name: 'Tamagoyaki', price: 3, item_type: 'Side')
 omochi = MenuItem.create(name: 'Omochi', price: 2, item_type: 'Snack')
 onigiri = MenuItem.create(name: 'Onigiri', price: 2, item_type: 'Snack')
-green_tea = MenuItem.create(name: 'Hot Green Tea', price: 2, item_type: 'Drink')
+green_tea = MenuItem.create(name: 'Hot Green Tea', price: 1, item_type: 'Drink')
 
 rachel_bento = Bentobox.create(name: 'Rachel BrusselSprout', bento_type: 'Dinner')
 kiele_bento = Bentobox.create(name: "That's My Sister's", bento_type: 'Dinner')

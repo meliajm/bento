@@ -32,7 +32,13 @@ class BentoboxesController < ApplicationController
     
     def update
         @bento.update(bento_params)
-        redirect_to bentobox_path(@bento)
+        # binding.pry
+        if @bento.save
+            redirect_to bentobox_path(@bento)
+        else
+            flash[:error] = @bento.errors.full_messages
+            redirect_to edit_bentobox_path
+        end
     end
 
     def total_price
