@@ -53,9 +53,11 @@ goes to show page of order with edit link
 places order
 
 [] need to figure out how to save array of ids to bentos and orders
+accepts_nested_attributes_for :categories
 
-only admin can make new menu items
 
+[] only admin can make new menu items
+[] partials
 
 
 

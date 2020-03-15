@@ -2,6 +2,8 @@
 <li>Bento Type: <%= @bento.bento_type %></li>
 <li>Total Price: <%= @bento.total_price %></li>
 
+<%= render 'menu_items/form' %>
+change so argument of form can be accepted
+
 <%= link_to "Order", new_order_path %> 
 
-<% binding.pry %>
