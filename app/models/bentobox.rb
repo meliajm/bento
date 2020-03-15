@@ -1,6 +1,6 @@
 class Bentobox < ApplicationRecord
     has_many :menu_items
-    has_many :users, through: :menu_items
+    # has_many :users, through: :menu_items
     
     validates :name, presence: true, uniqueness: true
     validates :item_type, inclusion: { in: %w(Lunch Dinner) }

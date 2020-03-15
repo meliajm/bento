@@ -36,6 +36,7 @@ not sure user needs a show page, can do straight to menu? or from show page link
 18. [x] order bento with entree first
 19. [] refactor total price
 20. [] add admin to user
+21. [] make login
 
 # rachel_bento.menu_items << [spicy_tofu, white_rice, veg_temp, avo_roll, j_salad, tamagoyaki]
 # kiele_bento.menu_items << [miso_butterfish, white_rice, gyoza, cali_roll, miso_soup, tamagoyaki]

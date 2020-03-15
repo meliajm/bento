@@ -10,8 +10,11 @@ class SessionsController < ApplicationController
       #save user who logs in through github to database?
       @user = User.create(name: params[:name], email: params[:email], password: params[:password]) if params[:name]
       # binding.pry
-      session[:name] = request.env['omniauth.auth']['info']['name'] if request.env['omniauth.auth']
-      session[:omniauth_data] = request.env['omniauth.auth'] if request.env['omniauth.auth']
+      if request.env['omniauth.auth']
+        session[:name] = request.env['omniauth.auth']['info']['name'] 
+        session[:omniauth_data] = request.env['omniauth.auth'] 
+        session[:user_id] = session[:omniauth_data]["uid"]
+      end
       # binding.pry
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
