@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_033227) do
     t.string "name"
     t.integer "price"
     t.string "item_type"
+    t.integer "user_id"
     t.integer "bentobox_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

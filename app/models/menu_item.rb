@@ -1,7 +1,7 @@
 class MenuItem < ApplicationRecord
 
     belongs_to :bentobox
-    # belongs_to :user
+    belongs_to :user
 
     validates :name, presence: true, uniqueness: true
     validates :price, presence: true
@@ -10,14 +10,5 @@ class MenuItem < ApplicationRecord
     def self.order_array_by_item_type
         order(item_type: :asc)
     end
-
-
-
-    # methods to add in later
     
-    # def make_order
-    # end
-
-    # def pay_for_order
-    # end
 end
