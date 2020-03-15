@@ -3,10 +3,8 @@
   <p><%= link_to "Menu", bentoboxes_path %></p>
 
 <% elsif session[:user_id] %>
-  <p>Welcome <%= session[:user_id].name %> </p>
+  <p>Welcome <%= @user.name %> </p>
   <p><%= link_to "Menu", bentoboxes_path %></p>
-
-  
 
 <% else %>
   <p><%= link_to 'Sign Up', signin_path%></p>

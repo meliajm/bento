@@ -6,7 +6,7 @@ class MenuItemsController < ApplicationController
     end
 
     def show
-        @menu_items = MenuItem.find(params[:id])
+        @menu_item = MenuItem.find(params[:id])
         # @user = current_user
     end
 
@@ -15,8 +15,8 @@ class MenuItemsController < ApplicationController
     end
 
     def create
-         @menu_item = MenuItem.new(menu_items_params)
-         redirect_to menu_item_path(@menu_item)
+        @menu_item = MenuItem.new(menu_items_params)
+        #  redirect_to menu_item_path(@menu_item)
         if @menu_item.save
             redirect_to menu_item_path(@menu_item)        
         else

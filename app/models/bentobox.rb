@@ -3,7 +3,7 @@ class Bentobox < ApplicationRecord
     # has_many :users, through: :menu_items
     
     validates :name, presence: true, uniqueness: true
-    validates :item_type, inclusion: { in: %w(Lunch Dinner) }
+    validates :bento_type, inclusion: { in: %w(Lunch Dinner) }
 
     def total_price
         self.number_of_sides * 3 + self.number_of_entrees * 7 + self.number_of_snacks * 2 + self.number_of_drinks  
