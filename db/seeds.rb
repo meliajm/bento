@@ -16,7 +16,7 @@ rachel_user.bentoboxes << [rachel_bento]
 kiele_user.bentoboxes << [kiele_bento, bananas_bento, snack_bento]
 hoodie_user.bentoboxes << [hoodie_bento]
 
- miso_butterfish = MenuItem.create(name: 'Miso Butterfish', price: 7, item_type: 'Entree')
+miso_butterfish = MenuItem.create(name: 'Miso Butterfish', price: 7, item_type: 'Entree')
 miso_salmon = MenuItem.create(name: 'Miso Salmon', price: 7, item_type: 'Entree')
 chicken_teriyaki = MenuItem.create(name: 'Chicken Teriyaki', price: 7, item_type: 'Entree')
 tonkatsu = MenuItem.create(name: 'Tonkatsu', price: 7, item_type: 'Entree')

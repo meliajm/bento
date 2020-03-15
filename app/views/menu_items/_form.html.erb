@@ -1,9 +1,21 @@
-<h1>Menu Items</h1>
-<%binding.pry%>
-<% @menu_items.order_array_by_item_type.each do |menu_item| %>
-    Name: <%= menu_item.name %>
-    <li>Price: <%= menu_item.price %></li>
-    <li>Type: <%= menu_item.item_type %></li>
-    <br>
+<%= form_for(@menu_item) do |f| %>
+    <p>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+    </p>
+
+    <p>
+    <%= f.label :item_type%>
+    <%= f.text_field :item_type%>
+    </p>
+
+    <p>
+    <%= f.label :price%>
+    <%= f.text_field :price%>
+    </p>
+
+    
+
+    <%= f.submit %>
 <% end %>
 
