@@ -59,6 +59,8 @@ accepts_nested_attributes_for :categories
 [] only admin can make new menu items
 [] partials
 
+how is bento associating menu items and what is the deal with order where it is not?!!!!
+
 
 
 

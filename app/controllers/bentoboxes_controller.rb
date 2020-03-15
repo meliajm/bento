@@ -3,10 +3,20 @@ class BentoboxesController < ApplicationController
     def new
         @bento = Bentobox.new
         @menu_items = MenuItem.all
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        @bento.menu_items.build()
+        # do 7 times
     end
 
     def create
+
         @bento = Bentobox.create(bento_params)
+        binding.pry
         if @bento.save
             redirect_to bentobox_path(@bento)
         else
@@ -30,7 +40,7 @@ class BentoboxesController < ApplicationController
     private
  
     def bento_params
-        params.require(:bentobox).permit(:name, :bento_type, menu_items: [])
+        params.require(:bentobox).permit(:name, :bento_type, menu_item_ids: [])
     end
 
 end

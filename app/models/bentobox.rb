@@ -9,6 +9,14 @@ class Bentobox < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :bento_type, inclusion: { in: %w(Lunch Dinner) }
 
+    def menu_item_ids=(ids)
+        ids = ids[1..-1]
+        ids.each do |id|
+          menu_item = MenuItem.find(id) if id != ""
+          self.menu_items << menu_item
+        end
+    end
+
     def total_price
         self.number_of_sides * 3 + self.number_of_entrees * 7 + self.number_of_snacks * 2 + self.number_of_drinks  
     end
