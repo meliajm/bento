@@ -40,15 +40,19 @@ not sure user needs a show page, can do straight to menu? or from show page link
 20. [] add admin to user
 21. [] make login
 
-so here's the plan
+[x] so here's the plan
 user goes to bento box new page
-from this form user can add menu items from checkboxes maybe
+from this form user can add menu items from checkboxes 
 then creates new bento box
 
-user then goes to order page
+[] total price is not calculated for bentos created this way
+
+[] user then goes to order page
 can select bentos from checkboxes again
 goes to show page of order with edit link
 places order
+
+[] need to figure out how to save array of ids to bentos and orders
 
 only admin can make new menu items
 

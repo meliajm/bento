@@ -1,5 +1,6 @@
 class Bentobox < ApplicationRecord
     has_many :menu_items
+    belongs_to :order
     # has_many :users, through: :menu_items
 
     # accepts_nested_attributes_for :menu_items
