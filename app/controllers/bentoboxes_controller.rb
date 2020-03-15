@@ -3,23 +3,16 @@ class BentoboxesController < ApplicationController
     def new
         @bento = Bentobox.new
         @menu_items = MenuItem.all
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        @bento.menu_items.build()
-        # do 7 times
+        # 17.times { @bento.menu_items.build() }
     end
 
     def create
-
         @bento = Bentobox.create(bento_params)
-        binding.pry
+        # binding.pry
         if @bento.save
             redirect_to bentobox_path(@bento)
         else
+            flash[:error] = @bento.errors.full_messages
             redirect_to new_bentobox_path
         end
     end
