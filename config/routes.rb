@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :users do 
+    resources :orders, only: [:show, :index]
+  end
   resources :orders
-  resources :users
-  resources :menu_items
   resources :bentoboxes
+  resources :menu_items
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#home', as: 'root'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

@@ -76,9 +76,13 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] user can go to login page to login #not omniauth user
     [x] create login route
     [x] create login view
-    
+
 [] nested links
 [] only admin can make new menu items
+[] menu items crud
+[] form flash error messages
+[] description of each menu item
+[] search methods- in partials lessons/labs?
 
 
 
