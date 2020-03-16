@@ -1,6 +1,7 @@
 <h3>Orders #index</h3>
 <% @orders.each do |order| %>
     <%= link_to "Order", user_order_path(@user, order) %>
+    <%binding.pry%>
     <div>Bento boxes:</div>
         <% order.bentoboxes.each do |bento| %>
             <li><%= bento.name %></li>

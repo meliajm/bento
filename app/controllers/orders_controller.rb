@@ -3,9 +3,14 @@ class OrdersController < ApplicationController
     before_action :set_order, only: [:show, :edit, :update, :destroy]
 
     def index
-        @user = current_user
+        # @user = current_user
         if params[:user_id]
-            @orders = User.find(params[:user_id]).orders 
+            @user = User.find(params[:user_id])
+            if @user.nil?
+                redirect_to '/', alert: "User not found" 
+            else
+                @orders = @user.orders 
+            end
         else
             @orders = Order.all
         end
