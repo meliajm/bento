@@ -6,7 +6,6 @@ class UsersController < ApplicationController
         
         # binding.pry
         if logged_in? && session[:user_id] == current_user.id
-
             @user = current_user
             redirect_to user_path(@user)
         else

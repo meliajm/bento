@@ -84,6 +84,8 @@ how is bento associating menu items and what is the deal with order where it is 
 [] description of each menu item
 [] search methods- in partials lessons/labs?
 
+??????????? cannot view user show page in browser
+
 
 
 omniauth user

@@ -2,6 +2,15 @@ class OrdersController < ApplicationController
 
     before_action :set_order, only: [:show, :edit, :update]
 
+    def index
+        @user = current_user
+        if params[:user_id]
+            @orders = User.find(params[:user_id]).orders 
+        else
+            @orders = Order.all
+        end
+    end
+
     def new
         @order = Order.new
         @user = current_user
