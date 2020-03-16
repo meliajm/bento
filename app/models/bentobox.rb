@@ -7,6 +7,7 @@ class Bentobox < ApplicationRecord
     
     validates :name, presence: true, uniqueness: true
     validates :bento_type, inclusion: { in: %w(Lunch Dinner) }
+    validates :menu_items, :presence => true
 
     def menu_item_ids=(ids)
         ids = ids[1..-1]

@@ -86,6 +86,7 @@ how is bento associating menu items and what is the deal with order where it is 
 
 [x] can view user show page in browser
 [] order can be deleted - need to add link to order index or show page?
+[] add validation so bento box must have at least one item
 
 
 

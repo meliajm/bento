@@ -3,9 +3,8 @@ class OrdersController < ApplicationController
     before_action :set_order, only: [:show, :edit, :update, :destroy]
 
     def index
-        # @user = current_user
-        if params[:user_id]
-            @user = User.find(params[:user_id])
+        if session[:user_id]
+            @user = User.find(session[:user_id])
             if @user.nil?
                 redirect_to '/', alert: "User not found" 
             else
@@ -39,7 +38,13 @@ class OrdersController < ApplicationController
     end
 
     def show
-        @user = current_user
+        if session[:user_id]
+            @user = current_user
+            @order = @user.orders.find_by(id: params[:id])
+            redirect_to user_orders_path(@user), alert: "Order not found" if @order.nil?
+        else
+            @order = Order.find_by(id: params[:id])
+        end 
     end
 
     def edit
@@ -59,10 +64,12 @@ class OrdersController < ApplicationController
     end
 
     def destroy
+        binding.pry
         @order.destroy
         flash[:notice] = "Order Deleted"
         redirect_to orders_path
     end
+
 
     private
  

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     resources :orders, only: [:show, :index]
   end
   resources :orders
+  post '/destroy', to: 'orders#destroy'
+  get '/destroy', to: 'orders#destroy'
+
   resources :bentoboxes
   resources :menu_items
   
