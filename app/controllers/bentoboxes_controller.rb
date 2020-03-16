@@ -12,11 +12,7 @@ class BentoboxesController < ApplicationController
 
     def create
 
-        # binding.pry
         @bento = Bentobox.new(bento_params)
-        # @user = current_user
-        # @bento.order.build()
-        # @bento.save
 
         if @bento.save
             redirect_to bentobox_path(@bento)
@@ -38,8 +34,9 @@ class BentoboxesController < ApplicationController
     end
     
     def update
+        @bento.menu_items.clear
+        @bento.save
         @bento.update(bento_params)
-        # binding.pry
         if @bento.save
             redirect_to bentobox_path(@bento)
         else
@@ -61,6 +58,5 @@ class BentoboxesController < ApplicationController
     def set_bento
         @bento = Bentobox.find_by(id: params[:id])
     end
-
 
 end

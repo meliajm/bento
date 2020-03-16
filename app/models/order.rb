@@ -7,4 +7,12 @@ class Order < ApplicationRecord
     def order_price
     end
 
+    def bentobox_ids=(ids)
+        ids = ids[1..-1]
+        ids.each do |id|
+            bentobox = Bentobox.find(id) if id != ""
+          self.bentoboxes << bentobox
+        end
+    end
+
 end

@@ -29,7 +29,9 @@ class OrdersController < ApplicationController
     private
  
     def order_params
-        params.require(:order).permit(:user_id, bentoboxes: [])
+        params.require(:order).permit(:user_id, bentobox_ids: [])
+        # params.require(:bentobox).permit(:name, :bento_type, menu_item_ids: [])
+
     end
 
 
