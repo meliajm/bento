@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+<p> <%= flash[:error] %>
+</p>
+<% end%>
+
+<%= form_for(@order) do |f| %>
+    
+
+    <p>
+        <%= f.collection_check_boxes :bentobox_ids, Bentobox.all, :id, :name %>
+    </p>
+
+    <%= f.submit %>
+<% end %>

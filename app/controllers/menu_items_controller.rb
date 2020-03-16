@@ -10,8 +10,13 @@ class MenuItemsController < ApplicationController
         # @user = current_user
     end
 
+    
     def new
-        @menu_item = MenuItem.new
+        if user.admin == 'true'
+            @menu_item = MenuItem.new
+        else
+            redirect_to bentoboxes_path
+        end
     end
 
     def create

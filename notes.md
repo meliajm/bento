@@ -63,10 +63,10 @@ accepts_nested_attributes_for :categories
 
 how is bento associating menu items and what is the deal with order where it is not?!!!!
 
-[] crud for bento boxes
-[] security
+[x] crud for bento boxes
+[x] security
 
-[?????] update for bento is not deleting items from list
+[x] update for bento is not deleting items from list
 
 
 omniauth user

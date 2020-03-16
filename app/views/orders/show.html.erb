@@ -2,3 +2,4 @@
 <li>Total Price: <%= @order.order_price %></li>
 <%= render partial: 'bentoboxes/index', locals: {bentos: @order.bentoboxes} %>
 
+<%= link_to "Edit your order", edit_order_path %>
