@@ -5,6 +5,8 @@ class MenuItem < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :price, presence: true
+    validates :price, numericality: { only_integer: true }
+
     validates :item_type, inclusion: { in: %w(Entree Side Snack Drink) }
 
     def self.order_array_by_item_type
