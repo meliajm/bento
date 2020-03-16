@@ -7,7 +7,7 @@
     
 
     <p>
-        <%= f.collection_check_boxes :bentobox_ids, Bentobox.all, :id, :name %>
+        <%= f.collection_check_boxes :bentobox_ids, @bentos, :id, :name %>
     </p>
 
     <%= f.submit %>

@@ -5,10 +5,15 @@ class OrdersController < ApplicationController
     def new
         @order = Order.new
         @user = current_user
+        # binding.pry
     end
 
     def create
+        @user = current_user
+        # binding.pry
+
         @order = Order.create(order_params)
+        @order.user = @user
         # binding.pry
         if @order.save
             redirect_to order_path(@order)
@@ -23,6 +28,7 @@ class OrdersController < ApplicationController
     end
 
     def edit
+        @bentos = Bentobox.all
     end
     
     def update
