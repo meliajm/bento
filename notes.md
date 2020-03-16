@@ -100,3 +100,21 @@ rails g migration CreateMediaJoinTable artists musics:uniq
             <li>Item Type: <%= menu_item.item_type %></li>
             <% bento.menu_items.order_array_by_item_type.each do |menu_item| %>
             --> 
+
+layouts/application
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bento</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <h1>Adventure Bento!</h1>
+    <%= yield %>
+  </body>
+</html>
