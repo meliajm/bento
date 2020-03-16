@@ -8,14 +8,17 @@ class SessionsController < ApplicationController
     def create
       # not sure about this because of omniauth plus reg auth
       #save user who logs in through github to database?
-      @user = User.create(name: params[:name], email: params[:email], password: params[:password]) if params[:name]
       # binding.pry
+      @user = User.create(name: params[:name], email: params[:email], password: params[:password]) if params[:name]
       if request.env['omniauth.auth']
         session[:name] = request.env['omniauth.auth']['info']['name'] 
         session[:omniauth_data] = request.env['omniauth.auth'] 
-        session[:user_id] = session[:omniauth_data]["uid"]
+        @user = User.find_or_create_by(name: session[:omniauth_data]["info"]["nickname"], email: session[:omniauth_data]["provider"])         
+        session[:user_id] = @user.id
+        # session[:user_id] = session[:omniauth_data]["uid"]
       end
       # binding.pry
+      
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           # redirect_to user_path(@user)

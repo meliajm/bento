@@ -8,7 +8,7 @@
 
 <% else %>
   <p><%= link_to 'Sign Up', signin_path%></p>
-  <p><%= link_to 'Signing in with GitHub', '/auth/github'%></p>
+  <p><%= link_to 'Sign In with GitHub', '/auth/github'%></p>
 <% end %>
 
 <%= link_to "Log Out", logout_path, method: 'post' if session[:user_id] || session[:omniauth_data] %>

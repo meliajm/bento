@@ -71,6 +71,7 @@ how is bento associating menu items and what is the deal with order where it is 
 ----------------------------------------------------------------------------------
 [] user can login through github too  // ♥ git commit -m 'can edit your order' 
     [x] user from github gets stored to db
+    [] can view user show page
 
 
 omniauth user
