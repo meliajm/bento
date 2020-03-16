@@ -1,4 +1,5 @@
 <%= form_for(@bento) do |f| %>
+
     <p>
     <%= f.label :name%>
     <%= f.text_field :name%>
@@ -8,7 +9,6 @@
     <%= f.label :bento_type%>
     <%= f.text_field :bento_type%>
     </p>
-
 
     <p>
         <%= f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name %>

@@ -68,7 +68,13 @@ how is bento associating menu items and what is the deal with order where it is 
 [] security
 
 
+omniauth user
+redirect not working for users show
 
+rails g migration CreateBentoboxMenuItemJoinTable bento_menu_items
+rails g migration CreateBentoboxOrderJoinTable bento_orders
+
+rails g migration CreateMediaJoinTable artists musics:uniq
 
 # rachel_bento.menu_items << [spicy_tofu, white_rice, veg_temp, avo_roll, j_salad, tamagoyaki]
 # kiele_bento.menu_items << [miso_butterfish, white_rice, gyoza, cali_roll, miso_soup, tamagoyaki]

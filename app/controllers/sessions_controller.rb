@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       # binding.pry
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
-          redirect_to user_path(@user)
+          # redirect_to user_path(@user)
       # elsif session[:name]
       #   @user = User.create(name: session[:name], email: session[:email])
       #   session[:user_id] = session[:omniauth_data]["uid"]

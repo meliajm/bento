@@ -5,12 +5,19 @@ class BentoboxesController < ApplicationController
     def new
         @bento = Bentobox.new
         @menu_items = MenuItem.all
+        # @user = current_user
+        # @order = Order.create(user_id: @user.id, bentobox_id: @bento.id)
         # 17.times { @bento.menu_items.build() }
     end
 
     def create
-        @bento = Bentobox.create(bento_params)
+
         # binding.pry
+        @bento = Bentobox.new(bento_params)
+        # @user = current_user
+        # @bento.order.build()
+        # @bento.save
+
         if @bento.save
             redirect_to bentobox_path(@bento)
         else

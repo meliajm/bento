@@ -1,6 +1,6 @@
 class MenuItem < ApplicationRecord
-
-    belongs_to :bentobox
+    has_many :bento_menu_items
+    has_many :bentoboxes, through: :bento_menu_items
     # belongs_to :user
 
     validates :name, presence: true, uniqueness: true

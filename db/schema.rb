@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_041147) do
+ActiveRecord::Schema.define(version: 2020_03_16_005010) do
+
+  create_table "bento_menu_items", force: :cascade do |t|
+    t.integer "bentobox_id"
+    t.integer "menu_item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bento_orders", force: :cascade do |t|
+    t.integer "bentobox_id"
+    t.integer "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bentoboxes", force: :cascade do |t|
     t.string "name"
