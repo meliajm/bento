@@ -64,8 +64,9 @@ accepts_nested_attributes_for :categories
 how is bento associating menu items and what is the deal with order where it is not?!!!!
 
 [] crud for bento boxes
-[x] update for bento is not deleting items from list
 [] security
+
+[?????] update for bento is not deleting items from list
 
 
 omniauth user
@@ -89,3 +90,7 @@ rails g migration CreateMediaJoinTable artists musics:uniq
 # rachel.bentoboxes << [rachel_bento]
 # kiele.bentoboxes << [kiele_bento, bananas_bento, snack_bento]
 # hoodie.bentoboxes << [hoodie_bento]
+<!--<li>Price: <%= menu_item.price %></li>
+            <li>Item Type: <%= menu_item.item_type %></li>
+            <% bento.menu_items.order_array_by_item_type.each do |menu_item| %>
+            --> 
