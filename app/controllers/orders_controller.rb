@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     def new
         @order = Order.new
         @user = current_user
+        @bentos = Bentobox.all
         # binding.pry
     end
 

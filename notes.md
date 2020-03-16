@@ -40,7 +40,7 @@ not sure user needs a show page, can do straight to menu? or from show page link
 20. [] add admin to user
 
 
-21. [] make login
+21. [x] make login
 
 [x] so here's the plan
 user goes to bento box new page
@@ -58,7 +58,6 @@ places order
 accepts_nested_attributes_for :categories
 
 
-[] only admin can make new menu items
 [x] partials
 
 how is bento associating menu items and what is the deal with order where it is not?!!!!
@@ -77,6 +76,10 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] user can go to login page to login #not omniauth user
     [x] create login route
     [x] create login view
+    
+[] nested links
+[] only admin can make new menu items
+
 
 
 omniauth user

@@ -11,7 +11,12 @@
     </p>
 
     <p>
-        <%= f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name %>
+        <%= f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name do |check_box| %>
+            <%= check_box.label(class: "check_box") do %>
+            <%= check_box.check_box(class: "check_box") %>
+            <%= check_box.object.name %></br>
+            <% end %>
+        <% end %>
     </p>
 
     <%= f.submit %>
