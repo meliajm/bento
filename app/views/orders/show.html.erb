@@ -1,2 +1,4 @@
 <p><%="#{@user.name}, here is your order: "%></p>
-<% binding.pry %>
+<li>Total Price: <%= @order.order_price %></li>
+<%= render partial: 'bentoboxes/index', locals: {bentos: @order.bentoboxes} %>
+

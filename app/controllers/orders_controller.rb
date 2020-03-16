@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
         if @order.save
             redirect_to order_path(@order)
         else
+            flash[:error] = @order.errors.full_messages
             redirect_to new_order_path #the new order is here haha
         end
     end
@@ -33,6 +34,5 @@ class OrdersController < ApplicationController
         # params.require(:bentobox).permit(:name, :bento_type, menu_item_ids: [])
 
     end
-
 
 end

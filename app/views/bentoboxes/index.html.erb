@@ -1,17 +1,5 @@
 <h2>Here are the Bento Boxes: </h2>
 
-<% @bentos.each do |bento| %>
-    <%= link_to "#{bento.name}", bentobox_path(bento) %> Type: <%= bento.bento_type %>
-    <div>Menu Items:</div>
-        <% bento.menu_items.order_array_by_item_type.each do |menu_item| %>
-        <% if menu_item.item_type == 'Entree' %>
-            <li><strong> Name: <%= menu_item.name %></strong></li>
-        <% else %> 
-            <li>Item Type: <%= menu_item.name %></li>
-        <% end %> 
-    <% end %> 
-    <br>
-<% end %>
-
+<%= render partial: 'bentoboxes/index', locals: {bentos: @bentos} %>
     <br>      
 <%= link_to "New Bento Box", new_bentobox_path %> 
