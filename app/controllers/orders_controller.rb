@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-    before_action :set_order, only: [:show, :edit, :update]
+    before_action :set_order, only: [:show, :edit, :update, :destroy]
 
     def index
         @user = current_user
@@ -51,6 +51,12 @@ class OrdersController < ApplicationController
             flash[:error] = @order.errors.full_messages
             redirect_to edit_order_path
         end
+    end
+
+    def destroy
+        @order.destroy
+        flash[:notice] = "Order Deleted"
+        redirect_to orders_path
     end
 
     private

@@ -77,14 +77,14 @@ how is bento associating menu items and what is the deal with order where it is 
     [x] create login route
     [x] create login view
 
-[] nested links
+[x] nested links
 [] only admin can make new menu items
 [] menu items crud
 [] form flash error messages
 [] description of each menu item
 [] search methods- in partials lessons/labs?
 
-??????????? cannot view user show page in browser
+[x] can view user show page in browser
 
 
 

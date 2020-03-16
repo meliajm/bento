@@ -2,8 +2,6 @@ class Bentobox < ApplicationRecord
     has_many :bento_menu_items
     has_many :menu_items, through: :bento_menu_items
     
-    # belongs_to :order
-    # 
     accepts_nested_attributes_for :menu_items
 
     
@@ -19,7 +17,7 @@ class Bentobox < ApplicationRecord
     end
 
     def total_price
-        self.number_of_sides * 3 + self.number_of_entrees * 7 + self.number_of_snacks * 2 + self.number_of_drinks  
+        self.number_of_sides * 3 + self.number_of_entrees * 7 + self.number_of_snacks * 2 + self.number_of_drinks * 2  
     end
 
     def number_of_sides
