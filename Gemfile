@@ -36,7 +36,7 @@ gem 'omniauth-github'
 
 gem 'dotenv-rails'
 
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 
 
 group :development, :test do
