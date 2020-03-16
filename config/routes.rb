@@ -10,6 +10,16 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
+
+  # delete '/logout', to: 'sessions#destroy'
+  # delete '/session', to: 'session#destroy'
+
+
+
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#login_post'
+
 
   get '/bentoboxes/:id/total_price', to: 'bentoboxes#total_price'
 end

@@ -31,11 +31,25 @@ class SessionsController < ApplicationController
       end
     end
 
+    def login
+    end
+
+    def login_post
+      @user = User.find_by(email: params[:email])
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect_to bentoboxes_path
+      else
+        redirect_to login_path
+      end
+
+    end
+
     def destroy
       session.delete :user_id 
       session.delete :omniauth_data
-
       redirect_to '/'
-  end
+    end
+
 end
   

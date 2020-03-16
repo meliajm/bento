@@ -1,6 +1,6 @@
 [x] 1. github omniauth
 [x] 2. many to many
-[] 3. rails amusement park css
+[x] 3. rails amusement park css
 [] 4. credit card transactions
         add admin to user model to edit menu items and bentos
         icons for bento boxes
@@ -69,14 +69,20 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] update for bento is not deleting items from list
 
 ----------------------------------------------------------------------------------
-[] user can login through github too  // ♥ git commit -m 'can edit your order' 
+[x] user can login through github too  // ♥ git commit -m 'can edit your order' 
     [x] user from github gets stored to db
     [x] can view user show page
     [x] can make order
 
+[x] user can go to login page to login #not omniauth user
+    [x] create login route
+    [x] create login view
+
 
 omniauth user
 redirect not working for users show
+
+things to learn about hidden tag
 
 rails g migration CreateBentoboxMenuItemJoinTable bento_menu_items
 rails g migration CreateBentoboxOrderJoinTable bento_orders

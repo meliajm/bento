@@ -1,0 +1,16 @@
+<%= form_tag ({controller: 'sessions', action: 'login_post', method: 'post'}) do %>
+
+    
+    <p>
+        <%= label_tag(:email, "Email: ") %><br>
+        <input name="email" type="text" id="email"><br>
+    </p>
+
+    <p>
+        <%= label_tag(:password, "Password: ") %> <br>
+        <input name="password" type="password" id="password"><br>
+    </p>
+
+  <input type="submit" value='Login'>
+
+<% end %>
