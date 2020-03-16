@@ -49,7 +49,7 @@ then creates new bento box
 
 [x] total price is not calculated for bentos created this way - got this figured out
 
-[] user then goes to order page
+[x] user then goes to order page
 can select bentos from checkboxes again
 goes to show page of order with edit link
 places order
@@ -67,6 +67,10 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] security
 
 [x] update for bento is not deleting items from list
+
+----------------------------------------------------------------------------------
+[] user can login through github too  // ♥ git commit -m 'can edit your order' 
+    [x] user from github gets stored to db
 
 
 omniauth user
