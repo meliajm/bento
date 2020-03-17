@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-    before_action :set_order, only: [:show, :edit, :update, :destroy]
+    before_action :set_order, only: [:show, :edit, :update, :destroy, :place_order]
 
     def index
         if session[:user_id]
@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
                 @orders = @user.orders 
             end
         else
-            @orders = Order.all
+            redirect_to '/', alert: "You are not logged in but shouldn't be able to see this anyways"
+            # @orders = Order.all
         end
     end
 
@@ -61,6 +62,14 @@ class OrdersController < ApplicationController
             flash[:error] = @order.errors.full_messages
             redirect_to edit_order_path
         end
+    end
+
+    def place_order
+        # @user = current_user
+        # @orders = current_user.orders
+        flash[:notice] = "Order Placed"
+        redirect_to root_path
+        # add route as post
     end
 
     def destroy

@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+<p> <%= flash[:notice] %>
+</p>
+<% end%>
 <% if session[:omniauth_data] %>
   <p>Welcome <%= session[:omniauth_data]['info']['nickname'] %> </p>
   <p><%= link_to "Menu", bentoboxes_path %></p>

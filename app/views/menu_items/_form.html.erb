@@ -5,16 +5,14 @@
     </p>
 
     <p>
-    <%= f.label :item_type%>
-    <%= f.text_field :item_type%>
-    </p>
-
-    <p>
     <%= f.label :price%>
     <%= f.text_field :price%>
     </p>
 
-    
+    <p>
+        <%= f.select :item_type, options_for_select(%w(Snack Side Entree Drink), :selected => @menu_item[:item_type]) %>
+    </p>
+
     <%= f.submit %>
 <% end %>
 

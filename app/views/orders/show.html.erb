@@ -8,6 +8,10 @@
 <%= render partial: 'bentoboxes/index', locals: {bentos: @order.bentoboxes} %>
 
 <%= link_to "Edit your order", edit_order_path %> <br>
-<%= button_to "Delete Your Order", order_path(@order), method: :delete %>
+<br>
+<%= link_to "Delete Your Order", order_path(@order), method: :delete %> <br>
+<br>
+<%= button_to "Place Your Order", place_order_path, method: :post %>
+
 
 

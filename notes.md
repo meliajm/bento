@@ -92,11 +92,14 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] can view user show page in browser
 [x] order can be deleted - need to add link to order index or show page?
 [x] add validation so bento box must have at least one item
+[x] drop down for lunch/dinner and snack/entree/side/drink
+
+[] place order post route - button
+[] add order price to user order index page
 
 
-[] form flash error messages
-[] drop down for lunch/dinner and snack/entree/side/drink
-[] ordered the list of menu items with class method
+[?????????] form flash error messages
+[????????] ordered the list of menu items with class method
 
 omniauth user
 redirect not working for users show
@@ -148,3 +151,8 @@ layouts/application
     <%= f.label :bento_type%>
     <%= f.text_field :bento_type%>
 </p>
+
+<p>
+    <%= f.label :item_type%>
+    <%= f.text_field :item_type%>
+    </p>

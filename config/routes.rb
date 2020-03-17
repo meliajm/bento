@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :orders
   post '/destroy', to: 'orders#destroy'
   get '/destroy', to: 'orders#destroy'
+  post '/place_order', to: 'orders#place_order'
 
   resources :bentoboxes
   resources :menu_items
