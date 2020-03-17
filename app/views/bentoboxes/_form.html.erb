@@ -11,9 +11,8 @@
     <%= f.text_field :name%>
     </p>
 
-    
     <p>
-        <%= f.select "bento_type", options_for_select(["Lunch", "Dinner"]) %>
+        <%= f.select :bento_type, options_for_select(["Lunch", "Dinner"], :selected => @bento[:bento_type]) %>
     </p>
 
     
