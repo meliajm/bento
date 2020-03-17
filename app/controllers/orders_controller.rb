@@ -64,7 +64,6 @@ class OrdersController < ApplicationController
     end
 
     def destroy
-        binding.pry
         @order.destroy
         flash[:notice] = "Order Deleted"
         redirect_to orders_path

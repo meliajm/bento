@@ -79,10 +79,15 @@ how is bento associating menu items and what is the deal with order where it is 
 
 [x] nested links
 [] only admin can make new menu items
+    [] add column to user called admin - migration
+    [] rails db:migrate
+    [] user has checkbox for admin
+    [] admin user cannot make orders?
+    [] add conditionals to menu new controller
 [] menu items crud
 [] form flash error messages
 [] description of each menu item
-[] search methods- in partials lessons/labs?
+[] search methods - in partials lessons/labs?
 
 [x] can view user show page in browser
 [] order can be deleted - need to add link to order index or show page?

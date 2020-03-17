@@ -1,15 +1,14 @@
 class MenuItemsController < ApplicationController
 
+    before_action :set_menu_items, only: [:show, :edit, :update, :destroy]
+
+
     def index
         @menu_items = MenuItem.all 
-        # @user = current_user
     end
 
     def show
-        @menu_item = MenuItem.find(params[:id])
-        # @user = current_user
     end
-
     
     def new
         # if user.admin == 'true'
@@ -21,7 +20,6 @@ class MenuItemsController < ApplicationController
 
     def create
         @menu_item = MenuItem.new(menu_items_params)
-        #  redirect_to menu_item_path(@menu_item)
         if @menu_item.save
             redirect_to menu_item_path(@menu_item)        
         else
@@ -30,19 +28,28 @@ class MenuItemsController < ApplicationController
     end
 
     def edit
-		@menu_item = Menu_item.find(params[:id])
     end
     
     def update
-        @menu_item = Attraction.find(params[:id])
         @menu_item.update(menu_items_params)
-        redirect_to menu_item_path(@menu_item)
+        if @menu_item.save
+            redirect_to menu_item_path(@menu_item)
+        else
+            flash[:error] = @menu_item.errors.full_messages
+            redirect_to edit_menu_item_path
+        end
+    end
+
+    def destroy
     end
 
     private
  
     def menu_items_params
-        params.require(:menu_item).permit(:name, :item_type, :price, :bento_name)
+        params.require(:menu_item).permit(:name, :item_type, :price)
     end
-    
+
+    def set_menu_items
+        @menu_item = Menu_item.find(params[:id])
+    end
 end
