@@ -1,6 +1,6 @@
 class BentoboxesController < ApplicationController
 
-    before_action :set_bento, only: [:show, :edit, :update]
+    before_action :set_bento, only: [:show, :edit, :update, :destroy]
 
     def new
         @bento = Bentobox.new
@@ -47,6 +47,12 @@ class BentoboxesController < ApplicationController
 
     def total_price
         @bento = Bentobox.find_by(id: params[:id])
+    end
+
+    def destroy
+        @bento.destroy
+        flash[:notice] = "Bento Box Deleted"
+        redirect_to bentoboxes_path
     end
 
     private

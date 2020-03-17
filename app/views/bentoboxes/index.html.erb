@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+<p> <%= flash[:notice] %>
+</p>
+<% end%>
 <h2>Here are the Bento Boxes: </h2>
 
 <%= render partial: 'bentoboxes/index', locals: {bentos: @bentos} %>
