@@ -85,16 +85,18 @@ how is bento associating menu items and what is the deal with order where it is 
     [] admin user cannot make orders?
     [] add conditionals to menu new controller
 [x] menu items crud
-[] form flash error messages
 [] description of each menu item
+
 [] search methods - in partials lessons/labs?
 
 [x] can view user show page in browser
-[] order can be deleted - need to add link to order index or show page?
+[x] order can be deleted - need to add link to order index or show page?
 [x] add validation so bento box must have at least one item
+
+
+[] form flash error messages
 [] drop down for lunch/dinner and snack/entree/side/drink
-
-
+[] ordered the list of menu items with class method
 
 omniauth user
 redirect not working for users show
@@ -141,3 +143,8 @@ layouts/application
     <%= yield %>
   </body>
 </html>
+
+<p>
+    <%= f.label :bento_type%>
+    <%= f.text_field :bento_type%>
+</p>

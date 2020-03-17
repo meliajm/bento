@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users do 
-    resources :orders, only: [:show, :index]
+    resources :orders, only: [:show, :index, :new]
   end
   resources :orders
   post '/destroy', to: 'orders#destroy'

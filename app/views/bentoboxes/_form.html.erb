@@ -11,9 +11,9 @@
     <%= f.text_field :name%>
     </p>
 
+    
     <p>
-    <%= f.label :bento_type%>
-    <%= f.text_field :bento_type%>
+        <%= f.select "bento_type", options_for_select(["Lunch", "Dinner"]) %>
     </p>
 
     
