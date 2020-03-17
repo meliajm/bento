@@ -41,6 +41,9 @@ class MenuItemsController < ApplicationController
     end
 
     def destroy
+        @menu_item.destroy 
+        flash[:notice] = 'Menu item deleted'
+        redirect_to menu_items_path
     end
 
     private
@@ -50,6 +53,6 @@ class MenuItemsController < ApplicationController
     end
 
     def set_menu_items
-        @menu_item = Menu_item.find(params[:id])
+        @menu_item = MenuItem.find(params[:id])
     end
 end

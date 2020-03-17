@@ -84,7 +84,7 @@ how is bento associating menu items and what is the deal with order where it is 
     [] user has checkbox for admin
     [] admin user cannot make orders?
     [] add conditionals to menu new controller
-[] menu items crud
+[x] menu items crud
 [] form flash error messages
 [] description of each menu item
 [] search methods - in partials lessons/labs?
