@@ -2,12 +2,10 @@
 <p> <%= flash[:notice] %>
 </p>
 <% end%>
-<% if session[:omniauth_data] %>
-  <p>Welcome <%= session[:omniauth_data]['info']['nickname'] %> </p>
-  <p><%= link_to "Menu", bentoboxes_path %></p>
 
-<% elsif session[:user_id] %>
-  <p>Welcome <%= @user.name %> </p>
+<p><strong> I got no cart and it's breaking my heart But I've found a driver and that's a start</strong></p>
+<% if logged_in? %>
+  <p>Welcome <%= current_user.name %> </p>
   <p><%= link_to "Menu", bentoboxes_path %></p>
 
 <% else %>
@@ -17,4 +15,10 @@
 
 <% end %>
 
-<%= link_to "Log Out", logout_path, method: 'post' if session[:user_id] || session[:omniauth_data] %>
+<p> Adventure Bento is a choose your own adventure bento box cart. You can select menu items and add 
+them to your bento box. Or you can choose from a list of already created bento boxes. Customize to your 
+heart's content. Add as many bentos as you like to your order. You can only place one order at a time, and you can see 
+what you've ordered before. Questions? Ask my sister. This bento box cart is her idea.
+</p>
+
+<%= link_to "Log Out", logout_path, method: 'post' if logged_in? %>

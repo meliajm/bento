@@ -3,17 +3,21 @@ class SessionsController < ApplicationController
     def new
     end
 
-    #questions on omniauth for validations conditionals for if user logs in via reg way or github
      
     def create
-      # not sure about this because of omniauth plus reg auth
-      #save user who logs in through github to database?
-      # binding.pry
       @user = User.create(name: params[:name], email: params[:email], password: params[:password]) if params[:name]
       if request.env['omniauth.auth']
-        session[:name] = request.env['omniauth.auth']['info']['name'] 
-        session[:omniauth_data] = request.env['omniauth.auth'] 
-        @user = User.find_or_create_by(name: session[:omniauth_data]["info"]["nickname"], email: session[:omniauth_data]["provider"])         
+        auth = request.env['omniauth.auth']
+        # session[:omniauth_data] = request.env['omniauth.auth'] 
+        
+        @user = User.find_or_create_by(uid: auth["uid"]) do |user|
+          user.name = auth["info"]["nickname"]
+          user.email = auth["info"]["email"] ? auth["info"]["email"] : "#{SecureRandom.hex}@email.com"
+          user.password = SecureRandom.hex
+        end
+        binding.pry
+
+
         session[:user_id] = @user.id
         # session[:user_id] = session[:omniauth_data]["uid"]
       end

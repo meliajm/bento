@@ -13,6 +13,7 @@ rails g resource Bentobox name:string type:string --no-test-framework
 rails g resource User name:string email:string password:digest --no-test-framework
 rails g resource MenuItem name:string price:integer type:string bentobox_id:integer user_id:integer--no-test-framework
 rails g resource Order bentobox_id:integer user_id:integer--no-test-framework
+rails g migration add_uid_to_users uid:integer
 
 
 menu_item type: side or main entree
@@ -100,6 +101,9 @@ how is bento associating menu items and what is the deal with order where it is 
 
 [?????????] form flash error messages
 [????????] ordered the list of menu items with class method
+[???????????] password for user from omniauth
+
+[] add uid to user table
 
 omniauth user
 redirect not working for users show

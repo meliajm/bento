@@ -5,7 +5,7 @@ class BentoboxesController < ApplicationController
     def new
         @bento = Bentobox.new
         @menu_items = MenuItem.all
-        # @user = current_user
+        @user = current_user
         # @order = Order.create(user_id: @user.id, bentobox_id: @bento.id)
         # 17.times { @bento.menu_items.build() }
     end
