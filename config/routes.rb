@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   resources :orders
   resources :bentoboxes
-  resources :menu_items
+  resources :menu_items, only: [:show, :index]
   
   post '/destroy', to: 'orders#destroy'
   get '/destroy', to: 'orders#destroy'
@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#login_post'
 
   get '/bentoboxes/:id/total_price', to: 'bentoboxes#total_price'
+
+  post '/orders/add_bento_to_order', to: 'orders#add_bento_to_order', as: 'add_bento'
+
 end

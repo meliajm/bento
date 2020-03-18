@@ -1,5 +1,6 @@
 MenuItem.destroy_all
 Bentobox.destroy_all
+Order.destroy_all
 User.destroy_all
 
 miso_butterfish = MenuItem.create(name: 'Miso Butterfish', price: 7, item_type: 'Entree')
@@ -20,17 +21,17 @@ miso_soup = MenuItem.create(name: 'Miso Soup', price: 3, item_type: 'Side')
 tamagoyaki = MenuItem.create(name: 'Tamagoyaki', price: 3, item_type: 'Side')
 omochi = MenuItem.create(name: 'Omochi', price: 2, item_type: 'Snack')
 onigiri = MenuItem.create(name: 'Onigiri', price: 2, item_type: 'Snack')
-green_tea = MenuItem.create(name: 'Hot Green Tea', price: 2, item_type: 'Drink')
-
-rachel_bento = Bentobox.create(name: 'Rachel BrusselSprout', bento_type: 'Dinner')
-kiele_bento = Bentobox.create(name: "That's My Sister's", bento_type: 'Dinner')
-hoodie_bento = Bentobox.create(name: "Mt Hoodie", bento_type: 'Dinner')
-bananas_bento = Bentobox.create(name: "Boston Bananas", bento_type: 'Lunch')
-snack_bento = Bentobox.create(name: "Snack-a-lack", bento_type: 'Lunch')
+green_tea = MenuItem.create(name: 'Hot Green Tea', price: 1, item_type: 'Drink')
 
 rachel_user = User.create(name: 'Rachel', email: 'rachel@rachie.com', password: 'password')
 kiele_user = User.create(name: 'Kiele', email: 'kiele@rachie.com', password: 'password')
 hoodie_user = User.create(name: 'Mount Hoodie', email: 'mthoodie@rachie.com', password: 'password')
+
+rachel_bento = Bentobox.create(name: 'Rachel BrusselSprout', bento_type: 'Dinner', user_id: 1)
+kiele_bento = Bentobox.create(name: "That's My Sister's", bento_type: 'Dinner', user_id: 2)
+hoodie_bento = Bentobox.create(name: "Mt Hoodie", bento_type: 'Dinner', user_id: 3)
+bananas_bento = Bentobox.create(name: "Boston Bananas", bento_type: 'Lunch', user_id: 1)
+snack_bento = Bentobox.create(name: "Snack-a-lack", bento_type: 'Lunch', user_id: 1)
 
 # rachel_user.bentoboxes << [rachel_bento]
 # kiele_user.bentoboxes << [kiele_bento, bananas_bento, snack_bento]

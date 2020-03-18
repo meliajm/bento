@@ -110,15 +110,25 @@ how is bento associating menu items and what is the deal with order where it is 
 
 -----------------------------------
 kiele notes
-[] user past orders on menu page in second column
-[] github login
+[x] user past orders on menu page in second column
+[x] github login
 [?????????????????] bread crumbs
-[] order button on menu page
-[] prepopulate order page from bento show
+[x] order button on menu page
+[x] prepopulate order new from bento show
+[x] menu in nav bar
+
+[] pair of values connected, so snack is 2, drink is 1, entree is 7
+
+[] only user associated w bento box can edit/delete it
+    [x] user has many bentos
+    [x] bento boxes belong to user
+    [x] add migration - rails g migration add_user_id_to_bentoboxes user_id:integer
+    [] add user_id info to db - rails db:seed
+    [] check out db in console
+    [] create hidden field??? so association is set up on new bento form
 
 
-
-[] user show page id does weird things
+[????????????] user show page id does weird things
 
 omniauth user
 redirect not working for users show

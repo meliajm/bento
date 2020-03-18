@@ -15,7 +15,6 @@ Specs:
  and reverse
 
  [?] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
- bento_name method in menu items model
 
  [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
  presence, uniqueness

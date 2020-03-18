@@ -19,12 +19,15 @@ class SessionsController < ApplicationController
 
 
         session[:user_id] = @user.id
+        session[:bento_ids] = []
+
         # session[:user_id] = session[:omniauth_data]["uid"]
       end
       # binding.pry
       
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
+          session[:bento_ids] = []
           # redirect_to user_path(@user)
       # elsif session[:name]
       #   @user = User.create(name: session[:name], email: session[:email])
@@ -51,7 +54,7 @@ class SessionsController < ApplicationController
 
     def destroy
       session.delete :user_id 
-      session.delete :omniauth_data
+      # session.delete :omniauth_data
       # reset_session
       # binding.pry
       redirect_to '/'

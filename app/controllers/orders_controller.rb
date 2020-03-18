@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
 
     before_action :set_order, only: [:show, :edit, :update, :destroy, :place_order]
+    def add_bento_to_order 
+        session[:bento_ids] << params[:bento_id] unless session[:bento_ids].include?(params[:bento_id]) 
+        redirect_to new_order_path   
+    end
 
     def index
         if session[:user_id]
@@ -17,10 +21,10 @@ class OrdersController < ApplicationController
     end
 
     def new
-        @order = Order.new
+        @order = Order.new(bentobox_ids: session[:bento_ids])
+        # binding.pry
         @user = current_user
         @bentos = Bentobox.all
-        # binding.pry
     end
 
     def create
@@ -44,6 +48,7 @@ class OrdersController < ApplicationController
             @order = @user.orders.find_by(id: params[:id])
             redirect_to user_orders_path(@user), alert: "Order not found" if @order.nil?
         else
+            # do i need this?
             @order = Order.find_by(id: params[:id])
         end 
     end
