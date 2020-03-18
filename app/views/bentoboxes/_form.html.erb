@@ -11,6 +11,8 @@
     <%= f.text_field :name%>
     </p>
 
+    <%= f.hidden_field :user_id%>
+
     <p>
         <%= f.select :bento_type, options_for_select(["Lunch", "Dinner"], :selected => @bento[:bento_type]) %>
     </p>

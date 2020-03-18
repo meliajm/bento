@@ -123,8 +123,8 @@ kiele notes
     [x] user has many bentos
     [x] bento boxes belong to user
     [x] add migration - rails g migration add_user_id_to_bentoboxes user_id:integer
-    [] add user_id info to db - rails db:seed
-    [] check out db in console
+    [x] add user_id info to db - rails db:seed
+    [x] check out db in console
     [] create hidden field??? so association is set up on new bento form
 
 
@@ -185,3 +185,4 @@ layouts/application
     <%= f.label :item_type%>
     <%= f.text_field :item_type%>
     </p>
+

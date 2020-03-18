@@ -3,15 +3,15 @@ class BentoboxesController < ApplicationController
     before_action :set_bento, only: [:show, :edit, :update, :destroy]
 
     def new
-        @bento = Bentobox.new
+        @bento = current_user.bentoboxes.build()
         @menu_items = MenuItem.all
-        @user = current_user
+        # @user = current_user
+        # binding.pry
         # @order = Order.create(user_id: @user.id, bentobox_id: @bento.id)
         # 17.times { @bento.menu_items.build() }
     end
 
     def create
-
         @bento = Bentobox.new(bento_params)
 
         if @bento.save
@@ -33,6 +33,9 @@ class BentoboxesController < ApplicationController
     end
 
     def edit
+        if current_user.id != @bento.user_id
+            redirect_to bentobox_path
+        end
     end
     
     def update
@@ -60,7 +63,7 @@ class BentoboxesController < ApplicationController
     private
  
     def bento_params
-        params.require(:bentobox).permit(:name, :bento_type, menu_item_ids: [])
+        params.require(:bentobox).permit(:name, :bento_type, :user_id, menu_item_ids: [])
     end
 
     def set_bento
