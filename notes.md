@@ -98,7 +98,7 @@ how is bento associating menu items and what is the deal with order where it is 
 [] place order post route - button
 [] add order price to user order index page
 [] delete menu_item not available
-[] 
+
 
 
 [?????????] form flash error messages
@@ -119,7 +119,7 @@ kiele notes
 
 [] pair of values connected, so snack is 2, drink is 1, entree is 7
 
-[] only user associated w bento box can edit/delete it
+[x] only user associated w bento box can edit/delete it
     [x] user has many bentos
     [x] bento boxes belong to user
     [x] add migration - rails g migration add_user_id_to_bentoboxes user_id:integer
@@ -128,10 +128,14 @@ kiele notes
     [x] create hidden field??? so association is set up on new bento form
 
     
-[] user can't delete bento box
+[x] user can't delete bento box
 
+[] add radio button for pickup or delivery to order
+    [] add pickup_deliver to migration - rails g migration add_pickup_deliver_to_orders pickup_deliver:string
+    [] update schema
+    [] add radio button to form
 
-[????????????] user show page id does weird things
+[x] user show page id does weird things
 
 omniauth user
 redirect not working for users show
@@ -192,3 +196,4 @@ layouts/application
         <%= button_to "Delete this menu item", menu_item_path(@menu_item), method: :delete %>
 
 
+    

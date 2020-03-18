@@ -15,5 +15,9 @@
         <% end %>
     </p>
 
+    <p>
+        <%= f.select :pickup_deliver, options_for_select(["Pickup", "Delivery"], :selected => @order[:pickup_deliver]), include_blank: true %>    
+    </p>
+
     <%= f.submit "Review Order"%>
 <% end %>
