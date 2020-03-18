@@ -10,22 +10,22 @@ class MenuItemsController < ApplicationController
     def show
     end
     
-    def new
-        # if user.admin == 'true'
-            @menu_item = MenuItem.new
-        # else
-            # redirect_to bentoboxes_path
-        # end
-    end
+    # def new
+    #     # if user.admin == 'true'
+    #         @menu_item = MenuItem.new
+    #     # else
+    #         # redirect_to bentoboxes_path
+    #     # end
+    # end
 
-    def create
-        @menu_item = MenuItem.new(menu_items_params)
-        if @menu_item.save
-            redirect_to menu_item_path(@menu_item)        
-        else
-            redirect_to new_menu_item_path
-        end
-    end
+    # def create
+    #     @menu_item = MenuItem.new(menu_items_params)
+    #     if @menu_item.save
+    #         redirect_to menu_item_path(@menu_item)        
+    #     else
+    #         redirect_to new_menu_item_path
+    #     end
+    # end
 
     def edit
     end
@@ -40,11 +40,11 @@ class MenuItemsController < ApplicationController
         end
     end
 
-    def destroy
-        @menu_item.destroy 
-        flash[:notice] = 'Menu item deleted'
-        redirect_to menu_items_path
-    end
+    # def destroy
+    #     @menu_item.destroy 
+    #     flash[:notice] = 'Menu item deleted'
+    #     redirect_to menu_items_path
+    # end
 
     private
  

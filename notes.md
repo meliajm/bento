@@ -125,7 +125,10 @@ kiele notes
     [x] add migration - rails g migration add_user_id_to_bentoboxes user_id:integer
     [x] add user_id info to db - rails db:seed
     [x] check out db in console
-    [] create hidden field??? so association is set up on new bento form
+    [x] create hidden field??? so association is set up on new bento form
+
+    
+[] user can't delete bento box
 
 
 [????????????] user show page id does weird things
@@ -185,4 +188,7 @@ layouts/application
     <%= f.label :item_type%>
     <%= f.text_field :item_type%>
     </p>
+
+        <%= button_to "Delete this menu item", menu_item_path(@menu_item), method: :delete %>
+
 
