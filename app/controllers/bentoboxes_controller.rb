@@ -24,6 +24,8 @@ class BentoboxesController < ApplicationController
 
     def index
         @bentos = Bentobox.all
+        @user = current_user
+        @orders = @user.orders
         # @menu_items = @bentos.menu_items
     end
 

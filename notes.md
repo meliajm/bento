@@ -97,13 +97,28 @@ how is bento associating menu items and what is the deal with order where it is 
 
 [] place order post route - button
 [] add order price to user order index page
+[] delete menu_item not available
+[] 
 
 
 [?????????] form flash error messages
 [????????] ordered the list of menu items with class method
-[???????????] password for user from omniauth
+[x] password for user from omniauth
 
-[] add uid to user table
+[x] add uid to user table
+
+
+-----------------------------------
+kiele notes
+[] user past orders on menu page in second column
+[] github login
+[?????????????????] bread crumbs
+[] order button on menu page
+[] prepopulate order page from bento show
+
+
+
+[] user show page id does weird things
 
 omniauth user
 redirect not working for users show

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
           user.email = auth["info"]["email"] ? auth["info"]["email"] : "#{SecureRandom.hex}@email.com"
           user.password = SecureRandom.hex
         end
-        binding.pry
+        # binding.pry
 
 
         session[:user_id] = @user.id
@@ -52,6 +52,8 @@ class SessionsController < ApplicationController
     def destroy
       session.delete :user_id 
       session.delete :omniauth_data
+      # reset_session
+      # binding.pry
       redirect_to '/'
     end
 

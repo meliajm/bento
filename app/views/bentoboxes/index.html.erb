@@ -2,8 +2,28 @@
 <p> <%= flash[:notice] %>
 </p>
 <% end%>
+<div class="row">
+  <div class="column">
+
 <h2>Here are the Bento Boxes: </h2>
 
 <%= render partial: 'bentoboxes/index', locals: {bentos: @bentos} %>
-    <br>      
-<%= link_to "New Bento Box", new_bentobox_path %> 
+    <br>  
+
+  </div>
+
+  <div class="column" >
+    <h2> Or you can create your own:  </h2> 
+    <br>
+<br>
+<%= link_to "New Bento Box", new_bentobox_path %> </p> 
+    <br>
+    <br>
+    <br>
+<h4>Here are you past orders</h4>
+<%= render partial: 'orders/index', locals: {bentos: @bentos} %>
+
+
+
+</div>
+    
