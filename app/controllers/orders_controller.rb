@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
     before_action :set_order, only: [:show, :edit, :update, :destroy, :place_order]
+    
     def add_bento_to_order 
         session[:bento_ids] << params[:bento_id] unless session[:bento_ids].include?(params[:bento_id]) 
         redirect_to new_order_path   
@@ -16,30 +17,26 @@ class OrdersController < ApplicationController
             end
         else
             redirect_to '/', alert: "You are not logged in but shouldn't be able to see this anyways"
-            # @orders = Order.all
         end
     end
 
     def new
         @order = Order.new(bentobox_ids: session[:bento_ids])
-        # binding.pry
         @user = current_user
         @bentos = Bentobox.all
     end
 
     def create
         @user = current_user
-        # binding.pry
-
         @order = Order.create(order_params)
         @order.user = @user
-        # binding.pry
-        if @order.save
-            redirect_to order_path(@order)
-        else
-            flash[:error] = @order.errors.full_messages
-            redirect_to new_order_path #the new order is here haha
-        end
+        validation(new_order_path)
+        # if @order.save
+        #     redirect_to order_path(@order)
+        # else
+        #     flash[:error] = @order.errors.full_messages
+        #     redirect_to new_order_path #the new order is here haha
+        # end
     end
 
     def show
@@ -54,10 +51,6 @@ class OrdersController < ApplicationController
 
     def edit
         @bentos = Bentobox.all
-        # if current_user != @order.user
-        #     redirect_to bentobox_path
-        # end
-        # binding.pry
         if current_user != @order.user
             redirect_to orders_path  
         end
@@ -67,20 +60,18 @@ class OrdersController < ApplicationController
         @order.bentoboxes.clear
         @order.save
         @order.update(order_params)
-        if @order.save
-            redirect_to order_path(@order)
-        else
-            flash[:error] = @order.errors.full_messages
-            redirect_to edit_order_path
-        end
+        validation(edit_order_path)
+        # if @order.save
+        #     redirect_to order_path(@order)
+        # else
+        #     flash[:error] = @order.errors.full_messages
+        #     redirect_to edit_order_path
+        # end
     end
 
     def place_order
-        # @user = current_user
-        # @orders = current_user.orders
         flash[:notice] = "Order Placed"
         redirect_to root_path
-        # add route as post
     end
 
     def destroy
@@ -98,6 +89,15 @@ class OrdersController < ApplicationController
 
     def set_order
         @order = Order.find_by(id: params[:id])
+    end
+
+    def validation(path)
+        if @order.save
+            redirect_to order_path(@order)
+        else
+            flash[:error] = @order.errors.full_messages
+            redirect_to path
+        end
     end
 
 end

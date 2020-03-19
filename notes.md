@@ -15,7 +15,8 @@ rails g resource MenuItem name:string price:integer type:string bentobox_id:inte
 rails g resource Order bentobox_id:integer user_id:integer--no-test-framework
 rails g migration add_uid_to_users uid:integer
 
-
+rails g migration RemoveCountryFromSampleApps country:string
+rails g migration RemoveBentoboxIdFromOrder bentobox_id:integer
 menu_item type: side or main entree
 build your own bento versus premade items together?
 Bento type (lunch or dinner for example)
@@ -108,6 +109,7 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] add uid to user table
 
 
+[] put flash notice into application layout?
 -----------------------------------
 kiele notes
 [x] user past orders on menu page in second column

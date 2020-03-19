@@ -1,32 +1,21 @@
 class BentoboxesController < ApplicationController
 
-    before_action :set_bento, only: [:show, :edit, :update, :destroy]
+    before_action :set_bento, only: [:show, :edit, :update, :destroy, :total_price]
 
     def new
         @bento = current_user.bentoboxes.build()
         @menu_items = MenuItem.all
-        # @user = current_user
-        # binding.pry
-        # @order = Order.create(user_id: @user.id, bentobox_id: @bento.id)
-        # 17.times { @bento.menu_items.build() }
     end
 
     def create
         @bento = Bentobox.new(bento_params)
-
-        if @bento.save
-            redirect_to bentobox_path(@bento)
-        else
-            flash[:error] = @bento.errors.full_messages
-            redirect_to new_bentobox_path
-        end
+        validation(new_bentobox_path)
     end
 
     def index
         @bentos = Bentobox.all
         @user = current_user
         @orders = @user.orders
-        # @menu_items = @bentos.menu_items
     end
 
     def show
@@ -42,16 +31,10 @@ class BentoboxesController < ApplicationController
         @bento.menu_items.clear
         @bento.save
         @bento.update(bento_params)
-        if @bento.save
-            redirect_to bentobox_path(@bento)
-        else
-            flash[:error] = @bento.errors.full_messages
-            redirect_to edit_bentobox_path
-        end
+        validation(edit_bentobox_path)
     end
 
-    def total_price
-        @bento = Bentobox.find_by(id: params[:id])
+    def total_price 
     end
 
     def destroy
@@ -68,6 +51,15 @@ class BentoboxesController < ApplicationController
 
     def set_bento
         @bento = Bentobox.find_by(id: params[:id])
+    end
+
+    def validation(path)
+        if @bento.save
+            redirect_to bentobox_path(@bento)
+        else
+            flash[:error] = @bento.errors.full_messages
+            redirect_to path
+        end
     end
 
 end

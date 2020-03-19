@@ -27,18 +27,18 @@ class MenuItemsController < ApplicationController
     #     end
     # end
 
-    def edit
-    end
+    # def edit
+    # end
     
-    def update
-        @menu_item.update(menu_items_params)
-        if @menu_item.save
-            redirect_to menu_item_path(@menu_item)
-        else
-            flash[:error] = @menu_item.errors.full_messages
-            redirect_to edit_menu_item_path
-        end
-    end
+    # def update
+    #     @menu_item.update(menu_items_params)
+    #     if @menu_item.save
+    #         redirect_to menu_item_path(@menu_item)
+    #     else
+    #         flash[:error] = @menu_item.errors.full_messages
+    #         redirect_to edit_menu_item_path
+    #     end
+    # end
 
     # def destroy
     #     @menu_item.destroy 
