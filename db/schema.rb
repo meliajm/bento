@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_150856) do
     t.integer "menu_item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "quantity", default: 1
+    t.integer "quantity", default: 0
   end
 
   create_table "bento_orders", force: :cascade do |t|

@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       else
           redirect_to '/'
       end
-      redirect_to bentoboxes_path
+      # redirect_to bentoboxes_path
     end
 
     def login

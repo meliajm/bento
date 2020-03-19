@@ -2,7 +2,6 @@ class MenuItemsController < ApplicationController
 
     before_action :set_menu_items, only: [:show, :edit, :update, :destroy]
 
-
     def index
         @menu_items = MenuItem.all 
     end

@@ -5,6 +5,9 @@ class BentoboxesController < ApplicationController
     def new
         @bento = current_user.bentoboxes.build()
         @menu_items = MenuItem.all
+        MenuItem.all.each do |item|
+            @bento.bento_menu_items.build(menu_item: item)
+        end
     end
 
     def create
@@ -46,7 +49,7 @@ class BentoboxesController < ApplicationController
     private
  
     def bento_params
-        params.require(:bentobox).permit(:name, :bento_type, :user_id, menu_item_ids: [])
+        params.require(:bentobox).permit(:name, :bento_type, :user_id, menu_item_ids: [], bento_menu_items_attributes: [:quantity, :menu_item_id])
     end
 
     def set_bento

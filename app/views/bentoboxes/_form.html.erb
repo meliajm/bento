@@ -12,21 +12,23 @@
     </p>
 
     
-        <%= f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name do |check_box| %>
-            <%= check_box.label(class: "check_box") do %>
-            <%= check_box.check_box(class: "check_box") %>
-            <%= check_box.object.name %></br>
-            <% end %>
-        <% end %>
+       <%#=#f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name do |check_box| %>
+           <%#=#check_box.label(class: "check_box") do %>
+            <%#=#check_box.check_box(class: "check_box") %>
+            <%#=#check_box.object.name %></br>
+            <%# end %>
+        <%# end %>
 
         <p>
-            <%= f.fields_for :bento_menu_items do |bento_menu_item| %>
-                <%= bento_menu_items.label :menu_item_name %>
-                <%= f.hidden_field :bento_menu_item.menu_item.name%>
-                <%= bento_menu_items.label :quantity %><br>
-                <%= bento_menu_items.text_field :quantity %><br>
+            <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
+                <%= bento_menu_item.hidden_field :menu_item_id %>
+                <%= bento_menu_item.label bento_menu_item.object.menu_item.name %><br>
+                <%= bento_menu_item.label :quantity %><br>
+                <%= bento_menu_item.text_field :quantity %><br>
             <% end %>
         </p>
-    
+
+        
+    <br>
     <%= f.submit %>
 <% end %>
