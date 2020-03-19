@@ -4,6 +4,7 @@ class MenuItemsController < ApplicationController
 
     def index
         @menu_items = MenuItem.all 
+        @bento_menu_item = @menu_items.bento_menu_item
     end
 
     def show

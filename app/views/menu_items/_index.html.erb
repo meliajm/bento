@@ -3,5 +3,10 @@
     <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
     <li>Price: <%= menu_item.price %></li>
     <li>Type: <%= menu_item.item_type %></li>
+    <% menu_item.bento_menu_items.each do |bento_menu_item|%>
+        <% if bento_menu_item.quantity != 0 %>
+            <li>Quantity: <%= bento_menu_item.quantity %></li>
+        <% end %>
+    <% end %>
     <br>
 <% end %>
