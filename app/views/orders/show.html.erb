@@ -1,8 +1,3 @@
-<% if flash[:notice] %>
-<p> <%= flash[:notice] %>
-</p>
-<% end%>
-
 <p><%="#{@user.name}, here is your order: "%></p>
 <li>Total Price: <%= @order.order_price %></li>
 <li><%= @order.pickup_deliver %></li>

@@ -42,9 +42,6 @@ class SessionsController < ApplicationController
 
     def destroy
       session.delete :user_id 
-      # session.delete :omniauth_data
-      # reset_session
-      # binding.pry
       redirect_to '/'
     end
 
