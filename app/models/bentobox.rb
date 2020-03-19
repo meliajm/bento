@@ -4,6 +4,7 @@ class Bentobox < ApplicationRecord
     belongs_to :user
     
     accepts_nested_attributes_for :menu_items
+    accepts_nested_attributes_for :bento_menu_items
 
     
     validates :name, presence: true, uniqueness: true

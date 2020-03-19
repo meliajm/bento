@@ -131,6 +131,12 @@ kiele notes
     [x] check out db in console
     [x] create hidden field??? so association is set up on new bento form
 
+[] add quantity to bento_menu_items
+    [x] add migration - rails g migration add_quantity_to_bento_menu_items quantity:integer + default value
+    [x] run migration
+    [] update controller
+     form
+
     
 [x] user can't delete bento box
 
@@ -140,6 +146,8 @@ kiele notes
     [x] add radio button to form
 
 [x] user show page id does weird things
+
+[] 
 
 omniauth user
 redirect not working for users show

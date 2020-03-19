@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_020503) do
+ActiveRecord::Schema.define(version: 2020_03_19_150856) do
 
   create_table "bento_menu_items", force: :cascade do |t|
     t.integer "bentobox_id"
     t.integer "menu_item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity", default: 1
   end
 
   create_table "bento_orders", force: :cascade do |t|

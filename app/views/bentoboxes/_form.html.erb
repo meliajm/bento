@@ -18,7 +18,15 @@
             <%= check_box.object.name %></br>
             <% end %>
         <% end %>
-    </p>
 
+        <p>
+            <%= f.fields_for :bento_menu_items do |bento_menu_item| %>
+                <%= bento_menu_items.label :menu_item_name %>
+                <%= f.hidden_field :bento_menu_item.menu_item.name%>
+                <%= bento_menu_items.label :quantity %><br>
+                <%= bento_menu_items.text_field :quantity %><br>
+            <% end %>
+        </p>
+    
     <%= f.submit %>
 <% end %>
