@@ -7,8 +7,10 @@
 <li>Total Price: <%= @bento.total_price %></li>
 
 <%= render partial: 'menu_items/index', locals: {menu_items: @bento.menu_items} %>
-<%= link_to "Edit this bento box", edit_bentobox_path %> <br>
-<%= button_to "Delete this bento box", bentobox_path(@bento), method: :delete if @bento.user == current_user%>
+<% if @bento.user == current_user %>
+    <%= link_to "Edit this bento box", edit_bentobox_path %> <br>
+    <%= button_to "Delete this bento box", bentobox_path(@bento), method: :delete %>
+<% end %>
 
 <br>
 <br>

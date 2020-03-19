@@ -131,9 +131,9 @@ kiele notes
 [x] user can't delete bento box
 
 [] add radio button for pickup or delivery to order
-    [] add pickup_deliver to migration - rails g migration add_pickup_deliver_to_orders pickup_deliver:string
-    [] update schema
-    [] add radio button to form
+    [x] add pickup_deliver to migration - rails g migration add_pickup_deliver_to_orders pickup_deliver:string
+    [x] update schema
+    [x] add radio button to form
 
 [x] user show page id does weird things
 

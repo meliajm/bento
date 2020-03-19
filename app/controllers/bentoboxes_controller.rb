@@ -34,7 +34,7 @@ class BentoboxesController < ApplicationController
 
     def edit
         if current_user.id != @bento.user_id
-            redirect_to bentobox_path
+            redirect_to bentobox_path(@bento)
         end
     end
     

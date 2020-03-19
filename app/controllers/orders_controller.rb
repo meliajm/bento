@@ -48,13 +48,19 @@ class OrdersController < ApplicationController
             @order = @user.orders.find_by(id: params[:id])
             redirect_to user_orders_path(@user), alert: "Order not found" if @order.nil?
         else
-            # do i need this?
             @order = Order.find_by(id: params[:id])
         end 
     end
 
     def edit
         @bentos = Bentobox.all
+        # if current_user != @order.user
+        #     redirect_to bentobox_path
+        # end
+        # binding.pry
+        if current_user != @order.user
+            redirect_to orders_path  
+        end
     end
     
     def update
