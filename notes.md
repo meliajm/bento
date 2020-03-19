@@ -136,6 +136,8 @@ kiele notes
     [x] run migration
     [x] update controller
     [x] form
+[x] total price calculation
+[] edit page needs to have items prepopulated and show other options for bentos
 
     
 [x] user can't delete bento box

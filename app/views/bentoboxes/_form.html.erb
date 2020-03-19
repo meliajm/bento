@@ -22,9 +22,10 @@
         <p>
             <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <%= bento_menu_item.hidden_field :menu_item_id %>
-                <%= bento_menu_item.label bento_menu_item.object.menu_item.name %><br>
+                <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
                 <%= bento_menu_item.label :quantity %><br>
                 <%= bento_menu_item.text_field :quantity %><br>
+                <% binding.pry %>
             <% end %>
         </p>
 

@@ -28,10 +28,15 @@ class BentoboxesController < ApplicationController
         if current_user.id != @bento.user_id
             redirect_to bentobox_path(@bento)
         end
+        @menu_items = MenuItem.all
+        MenuItem.all.each do |item|
+            @bento.bento_menu_items.build(menu_item: item)
+        end
     end
     
     def update
         @bento.menu_items.clear
+        @bento.bento_menu_items.clear
         @bento.save
         @bento.update(bento_params)
         validation(edit_bentobox_path)
