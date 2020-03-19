@@ -1,3 +1,5 @@
+<div class="row">
+  
 <%= form_for(@bento) do |f| %>
 
     <p>
@@ -8,27 +10,47 @@
     <%= f.hidden_field :user_id%>
 
     <p>
-        <%= f.select :bento_type, options_for_select(["Lunch", "Dinner"], :selected => @bento[:bento_type]) %>
+        <label for="">Meal Type</label>
+        <%= f.select :bento_type, options_for_select(["Lunch", "Dinner"], :selected => @bento[:bento_type]), include_blank: true %>
     </p>
 
-    
-       <%#=#f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name do |check_box| %>
-           <%#=#check_box.label(class: "check_box") do %>
-            <%#=#check_box.check_box(class: "check_box") %>
-            <%#=#check_box.object.name %></br>
-            <%# end %>
-        <%# end %>
-
+    <div class="column">
+            <h3> Entrees </h3>
         <p>
             <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
-                <%= bento_menu_item.hidden_field :menu_item_id %>
-                <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
-                <%= bento_menu_item.label :quantity %><br>
-                <%= bento_menu_item.text_field :quantity %><br>
+                <%if bento_menu_item.object.menu_item.item_type == 'Entree' %>
+                    <%= bento_menu_item.hidden_field :menu_item_id %>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
+                    <%= bento_menu_item.label :quantity %><br>
+                    <%= bento_menu_item.text_field :quantity %><br>
+                <% end %>
+            <% end %>      
+        </p>  
+        </div>
+    <div class="column">
+        <h3> Sides </h3>
+        <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
+                <%if bento_menu_item.object.menu_item.item_type == 'Side' %>
+                    <%= bento_menu_item.hidden_field :menu_item_id %>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
+                    <%= bento_menu_item.label :quantity %><br>
+                    <%= bento_menu_item.text_field :quantity %><br>
+                <% end %>
             <% end %>
-        </p>
-
-        
+    </div>
+    <div class="column">
+    <h3>Snacks and Drinks </h3>
+        <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
+                <% if bento_menu_item.object.menu_item.item_type == 'Snack' || bento_menu_item.object.menu_item.item_type == 'Drink' %>
+                    <%= bento_menu_item.hidden_field :menu_item_id %>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
+                    <%= bento_menu_item.label :quantity %><br>
+                    <%= bento_menu_item.text_field :quantity %><br>
+                <% end %>
+            <% end %>
     <br>
     <%= f.submit %>
+    
+    </div>
 <% end %>
+</div>

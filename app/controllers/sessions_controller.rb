@@ -15,11 +15,13 @@ class SessionsController < ApplicationController
         end
         session[:user_id] = @user.id
         session[:bento_ids] = []
+        redirect_to bentoboxes_path
       end
       
       if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           session[:bento_ids] = []
+          redirect_to bentoboxes_path
       else
           redirect_to '/'
       end

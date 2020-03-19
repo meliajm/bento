@@ -1,7 +1,8 @@
 MenuItem.destroy_all
 Bentobox.destroy_all
 Order.destroy_all
-User.destroy_all
+BentoMenuItem.destroy_all
+# User.destroy_all
 
 miso_butterfish = MenuItem.create(name: 'Miso Butterfish', price: 7, item_type: 'Entree')
 miso_salmon = MenuItem.create(name: 'Miso Salmon', price: 7, item_type: 'Entree')
@@ -23,9 +24,10 @@ omochi = MenuItem.create(name: 'Omochi', price: 2, item_type: 'Snack')
 onigiri = MenuItem.create(name: 'Onigiri', price: 2, item_type: 'Snack')
 green_tea = MenuItem.create(name: 'Hot Green Tea', price: 1, item_type: 'Drink')
 
-rachel_user = User.create(name: 'Rachel', email: 'rachel@rachie.com', password: 'password')
-kiele_user = User.create(name: 'Kiele', email: 'kiele@rachie.com', password: 'password')
-hoodie_user = User.create(name: 'Mount Hoodie', email: 'mthoodie@rachie.com', password: 'password')
+# users already in database
+# rachel_user = User.create(name: 'Rachel', email: 'rachel@rachie.com', password: 'password')
+# kiele_user = User.create(name: 'Kiele', email: 'kiele@rachie.com', password: 'password')
+# hoodie_user = User.create(name: 'Mount Hoodie', email: 'mthoodie@rachie.com', password: 'password')
 
 # rachel_bento = Bentobox.create(name: 'Rachel BrusselSprout', bento_type: 'Dinner', user_id: 1)
 # kiele_bento = Bentobox.create(name: "That's My Sister's", bento_type: 'Dinner', user_id: 2)

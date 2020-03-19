@@ -98,9 +98,9 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] add validation so bento box must have at least one item
 [x] drop down for lunch/dinner and snack/entree/side/drink
 
-[] place order post route - button
-[] add order price to user order index page
-[] delete menu_item not available
+[x] place order 
+[x] add order price to user order index page
+[x] delete menu_item not available
 
 
 
@@ -111,8 +111,13 @@ how is bento associating menu items and what is the deal with order where it is 
 [x] add uid to user table
 
 
-[] put flash notice into application layout?
+[x] put flash notice into application layout?
 -----------------------------------
+[] edit page has menu items only one time
+[] edit page needs to have items prepopulated and show other options for bentos
+
+[] 3 columns for new bento box
+
 kiele notes
 [x] user past orders on menu page in second column
 [x] github login
@@ -137,7 +142,6 @@ kiele notes
     [x] update controller
     [x] form
 [x] total price calculation
-[] edit page needs to have items prepopulated and show other options for bentos
 
     
 [x] user can't delete bento box
@@ -145,7 +149,7 @@ kiele notes
 [] add radio button for pickup or delivery to order
     [x] add pickup_deliver to migration - rails g migration add_pickup_deliver_to_orders pickup_deliver:string
     [x] update schema
-    [x] add radio button to form
+    [] add dropdown to form
 
 [x] user show page id does weird things
 
@@ -212,3 +216,10 @@ layouts/application
 <%= f.hidden_field :bento_menu_item_id.menu_item.name%>
 
         <% if bento_menu_item.quantity != 0 %>
+
+        <%#=#f.collection_check_boxes :menu_item_ids, MenuItem.all, :id, :name do |check_box| %>
+           <%#=#check_box.label(class: "check_box") do %>
+            <%#=#check_box.check_box(class: "check_box") %>
+            <%#=#check_box.object.name %></br>
+            <%# end %>
+        <%# end %>

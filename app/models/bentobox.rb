@@ -15,14 +15,11 @@ class Bentobox < ApplicationRecord
         self.menu_items.each do |menu_item|
             menu_item.bento_menu_items.each do |bento_menu_item| 
                 tot += menu_item.price * bento_menu_item.quantity
+                # binding.pry
             end
         end
         tot
     end
-
-
-
-
 
     # def total_price
     #     # binding.pry
