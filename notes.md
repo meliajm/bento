@@ -1,3 +1,5 @@
+https://meliajm.github.io/adventure_bento_for_rails
+
 [x] 1. github omniauth
 [x] 2. many to many
 [x] 3. rails amusement park css

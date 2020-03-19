@@ -1,25 +1,24 @@
 <div class="row">
   <div class="column">
 
-<h2>Here are the Bento Boxes: </h2>
+<h3>Signature Bento Boxes: </h3>
 
 <%= render partial: 'bentoboxes/index', locals: {bentos: @bentos} %>
 <h2><%= link_to "Order", new_order_path %></h2>
 
   </div>
 
+    <div class="column">
+<h4>Here are your past orders</h4>
+<%= render partial: 'orders/index', locals: {bentos: @bentos} %>
+</div>
+
   <div class="column" >
-    <h2> Or you can create your own:  </h2> 
+    <h4> Or you can create your own:  </h4> 
     <br>
 <br>
 <%= link_to "New Bento Box", new_bentobox_path %> </p> 
     <br>
     <br>
     <br>
-<h4>Here are you past orders</h4>
-<%= render partial: 'orders/index', locals: {bentos: @bentos} %>
-
-
-
-</div>
-    
+    </div>
