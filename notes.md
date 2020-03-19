@@ -210,3 +210,5 @@ layouts/application
         <%= button_to "Delete this menu item", menu_item_path(@menu_item), method: :delete %>
 
 <%= f.hidden_field :bento_menu_item_id.menu_item.name%>
+
+        <% if bento_menu_item.quantity != 0 %>
