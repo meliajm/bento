@@ -32,9 +32,12 @@ class BentoboxesController < ApplicationController
         if current_user.id != @bento.user_id
             redirect_to bentobox_path(@bento)
         end
-        @menu_items = MenuItem.all
+        
+        # @menu_items = MenuItem.all.select { |menu_item| !@bento.menu_items.include?(menu_item) }
+        
+        # @menu_items
         MenuItem.all.each do |item|
-            @bento.bento_menu_items.build(menu_item: item)
+            @bento.bento_menu_items.build(menu_item: item) if !@bento.menu_items.include?(item)
         end
         
         # MenuItem.all.each do |item|
