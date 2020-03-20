@@ -15,7 +15,7 @@
     </p>
 
     <div class="column">
-            <h3> Entrees </h3>
+            <h3> Entrees ($7 each) </h3>
         <p>
             <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <%if bento_menu_item.object.menu_item.item_type == 'Entree' %>
@@ -28,7 +28,7 @@
         </p>  
         </div>
     <div class="column">
-        <h3> Sides </h3>
+        <h3> Sides ($ 3 each) </h3>
         <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <%if bento_menu_item.object.menu_item.item_type == 'Side' %>
                     <%= bento_menu_item.hidden_field :menu_item_id %>
@@ -39,7 +39,7 @@
             <% end %>
     </div>
     <div class="column">
-    <h3>Snacks and Drinks </h3>
+    <h3>Snacks & Drinks ($2 and $1)</h3>
         <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <% if bento_menu_item.object.menu_item.item_type == 'Snack' || bento_menu_item.object.menu_item.item_type == 'Drink' %>
                     <%= bento_menu_item.hidden_field :menu_item_id %>
