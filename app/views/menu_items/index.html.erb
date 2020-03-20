@@ -1,5 +1,3 @@
-
-
 <h3>Menu Items #index</h3>
 <% @menu_items.order_array_by_item_type.each do |menu_item| %>
     <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>

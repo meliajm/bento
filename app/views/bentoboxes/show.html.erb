@@ -3,7 +3,7 @@
 <li>Total Price: <%= @bento.total_price %></li>
 
 <!--<%#= render partial: 'menu_items/index', locals: {menu_items: @bento.menu_items} %>-->
-<%= render partial: 'menu_items/index', locals: {menu_items: @bento.menu_items} %>
+<%= render partial: 'menu_items/index' %>
 
 <% if @bento.user == current_user %>
     <%= link_to "Edit this bento box", edit_bentobox_path %> <br>
