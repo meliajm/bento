@@ -3,7 +3,7 @@ class MenuItemsController < ApplicationController
     before_action :set_menu_items, only: [:show, :edit, :update, :destroy]
 
     def index
-        @bento = Bentobox.find_by(id: 40)
+        # @bento = Bentobox.find_by(id: 40)
         @menu_items = MenuItem.all 
         @bento_menu_items = @bento.bento_menu_items
         # @bento_menu_items = @menu_items.bento_menu_item

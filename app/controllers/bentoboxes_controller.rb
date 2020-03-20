@@ -19,6 +19,7 @@ class BentoboxesController < ApplicationController
     end
 
     def index
+        # user with id of 4 is like admin
         @bentos = Bentobox.all.select { |bento| bento.user_id == 4}
         @user = current_user
         @orders = @user.orders
