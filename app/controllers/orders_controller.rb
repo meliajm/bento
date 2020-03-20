@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
     before_action :set_order, only: [:show, :edit, :update, :destroy, :place_order]
     
     def add_bento_to_order 
+        # binding.pry
         session[:bento_ids] << params[:bento_id] unless session[:bento_ids].include?(params[:bento_id]) 
         redirect_to new_order_path   
     end
@@ -21,9 +22,11 @@ class OrdersController < ApplicationController
     end
 
     def new
-        @order = Order.new(bentobox_ids: session[:bento_ids])
+        @order = Order.new(bentobox_ids: session[:bento_ids]) #if !Order.find_by(bentobox_ids: session[:bento_ids])
         @user = current_user
-        @bentos = Bentobox.all
+        bentos_signature = Bentobox.all.select { |bento| bento.user_id == 4}
+        bentos_user = @order.bentoboxes.select { |bento| !bentos_signature.include?(bento)}
+        @bentos = bentos_signature + bentos_user
     end
 
     def create
@@ -50,7 +53,10 @@ class OrdersController < ApplicationController
     end
 
     def edit
-        @bentos = Bentobox.all
+        # @bentos = Bentobox.all
+        bentos_signature = Bentobox.all.select { |bento| bento.user_id == 4}
+        bentos_user = @order.bentoboxes.select { |bento| !bentos_signature.include?(bento)}
+        @bentos = bentos_signature + bentos_user
         if current_user != @order.user
             redirect_to orders_path  
         end

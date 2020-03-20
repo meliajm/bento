@@ -2,8 +2,8 @@
 <% @orders.each do |order| %>
     <%= link_to "View Order", user_order_path(@user, order) %>
     <div>Bento boxes:</div>
-        <% order.bentoboxes.each do |bento| %>
-            <li><%= bento.name %></li>
+    <% order.bentoboxes.each do |bento| %>
+        <li><%= bento.name %></li>
     <% end %> 
     <br>
 <% end %>

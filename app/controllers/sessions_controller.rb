@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
           session[:bento_ids] = []
           redirect_to bentoboxes_path
       else
-          redirect_to '/'
+          # redirect_to '/'
       end
       # redirect_to bentoboxes_path
     end
@@ -37,6 +37,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to bentoboxes_path
       else
+        flash[:error] = @user.errors.full_messages
         redirect_to login_path
       end
 

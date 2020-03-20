@@ -1,13 +1,16 @@
 <p><%="#{@user.name}, here is your order: "%></p>
-<li>Order Number: <%= @order.id %></li>
-<li>Total Price: <%= @order.order_price %></li>
-<li><%= @order.pickup_deliver %></li>
+
+    <li>Order Number: <%= @order.id %></li>
+    <li>Total Price: <%= @order.order_price %></li>
+    <li><%= @order.pickup_deliver %></li>
 
 <%= render partial: 'bentoboxes/index', locals: {bentos: @order.bentoboxes} %>
 
-<%= link_to "Edit your order", edit_order_path %> <br>
+<%= link_to "Edit your order", edit_order_path %> 
 <br>
-<%= link_to "Delete Your Order", order_path(@order), method: :delete %> <br>
+<br>
+<%= button_to "Delete Your Order", order_path(@order), method: :delete %> 
+<br>
 <br>
 <%= button_to "Place Your Order", place_order_path, method: :post %>
 
