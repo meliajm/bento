@@ -1,2 +1,16 @@
 
-<%= render partial: 'menu_items/index', locals: {menu_items: @menu_items} %>
+<!--<%#= 40 render partial: 'menu_items/index', locals: {menu_items: @menu_items} %>-->
+<%= @bento.id %>
+<h3>Menu Items #index</h3>
+<% @bento.menu_items.order_array_by_item_type.each do |menu_item| %>
+    <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
+    <li>Price: <%= menu_item.price %></li>
+    <li>Type: <%= menu_item.item_type %></li>
+    <% menu_item.bento_menu_items.each do |bento_menu_item|%>
+       <!-- <#% if bento_menu_item.menu_item.name == menu_item.name %> if menu_item.bentoboxes.include?(bento_menu_item.bentobox)-->
+       <% if menu_item %>
+            <li>Quantity: <%= bento_menu_item.quantity %></li>
+        <% end %>
+    <% end %>
+    <br>
+<% end %>

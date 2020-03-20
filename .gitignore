@@ -33,9 +33,13 @@
 /node_modules
 /yarn-error.log
 yarn-debug.log*
+
 .yarn-integrity
 
-.env
 notes.md
 
+.env
+
+
 blog.md
+notes1.md

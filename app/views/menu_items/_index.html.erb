@@ -1,12 +1,24 @@
-<h3>Menu Items</h3>
+<!-- <#%<h3>Menu Items</h3>
 <% menu_items.order_array_by_item_type.each do |menu_item| %>
     <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
     <li>Price: <%= menu_item.price %></li>
     <li>Type: <%= menu_item.item_type %></li>
     <% menu_item.bento_menu_items.each do |bento_menu_item|%>
-       <!-- <#% if bento_menu_item.menu_item.name == menu_item.name %>-->
+        #<--if bento_menu_item.menu_item.name == menu_item.name %>
        <% if menu_item.bentoboxes.include?(bento_menu_item.bentobox) %>
             <li>Quantity: <%= bento_menu_item.quantity %></li>
+        <% end %>
+    <% end %>
+    <br>
+<% end %>-->
+<h3>Menu Items #index</h3>
+<% @bento.menu_items.order_array_by_item_type.each do |menu_item| %>
+    <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
+    <li>Price: <%= menu_item.price %></li>
+    <li>Type: <%= menu_item.item_type %></li>
+    <% @bento.bento_menu_items.each do |bento_menu_item|%>
+       <!-- <% if bento_menu_item%><#% if bento_menu_item.menu_item.name == menu_item.name %> if menu_item.bentoboxes.include?(bento_menu_item.bentobox)-->
+            <li>Quantity: <%= bento_menu_item.quantity if bento_menu_item.menu_item==menu_item%></li>
         <% end %>
     <% end %>
     <br>

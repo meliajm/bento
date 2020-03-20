@@ -11,13 +11,18 @@ class Bentobox < ApplicationRecord
     validates :bento_type, inclusion: { in: %w(Lunch Dinner) }
     
     def total_price
+        # @budget.zip @actual
         tot = 0
-        self.menu_items.each do |menu_item|
-            menu_item.bento_menu_items.each do |bento_menu_item| 
-                tot += menu_item.price * bento_menu_item.quantity
-                # binding.pry
-            end
+        zipped_array = self.menu_items.zip(self.bento_menu_items)
+        zipped_array.each do |menu_item, bento_menu_item|
+            tot += menu_item.price * bento_menu_item.quantity
         end
+        # self.menu_items.each do |menu_item|
+            # menu_item.bento_menu_items.each do |bento_menu_item| 
+                # tot += menu_item.price * bento_menu_item.quantity
+                # binding.pry
+        #     end
+        # end
         tot
     end
 
