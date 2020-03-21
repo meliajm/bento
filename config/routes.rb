@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get '/bentoboxes/:id/total_price', to: 'bentoboxes#total_price'
   post '/orders/add_bento_to_order', to: 'orders#add_bento_to_order', as: 'add_bento'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :charges, only: [:new, :create]
 end
