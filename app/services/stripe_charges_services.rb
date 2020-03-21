@@ -1,8 +1,9 @@
-class StripeChargesServices < ApplicationService
+class StripeChargesServices 
   
   DEFAULT_CURRENCY = 'usd'.freeze
   
   def initialize(params, user)
+    # binding.pry
     @stripe_email = params[:stripeEmail]
     @stripe_token = params[:stripeToken]
     @order = params[:order_id]
@@ -18,11 +19,12 @@ class StripeChargesServices < ApplicationService
   attr_accessor :user, :stripe_email, :stripe_token, :order
 
   def find_customer
-  if user.stripe_token
-    retrieve_customer(user.stripe_token)
-  else
-    create_customer
-  end
+    # binding.pry
+    if user.stripe_token
+      retrieve_customer(user.stripe_token)
+    else
+      create_customer
+    end
   end
 
   def retrieve_customer(stripe_token)
@@ -48,6 +50,6 @@ class StripeChargesServices < ApplicationService
   end
 
   def order_amount
-    Order.find_by(id: order).amount
+    Order.find_by(id: 7).order_price
   end
 end

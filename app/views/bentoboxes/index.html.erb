@@ -1,7 +1,7 @@
 <div class="row">
+<h3>Signature Bento Boxes: </h3>
   <div class="column">
 
-<h3>Signature Bento Boxes: </h3>
 
 <%= render partial: 'bentoboxes/index', locals: {bentos: @bentos} %>
 <h2><%= button_to "Order", new_order_path, method: :get %></h2>
