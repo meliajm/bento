@@ -20,21 +20,21 @@
             <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <%if bento_menu_item.object.menu_item.item_type == 'Entree' %>
                     <%= bento_menu_item.hidden_field :menu_item_id %>
-                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
-                    <%= bento_menu_item.label :quantity %><br>
-                    <%= bento_menu_item.text_field :quantity %><br>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %><br>
+                    <%= bento_menu_item.label :quantity %>
+                    <%= bento_menu_item.text_field :quantity %><br><br>
                 <% end %>
             <% end %>      
         </p>  
         </div>
     <div class="column">
-        <h3> Sides ($ 3 each) </h3>
+        <h3> Sides ($3 each) </h3>
         <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <%if bento_menu_item.object.menu_item.item_type == 'Side' %>
                     <%= bento_menu_item.hidden_field :menu_item_id %>
-                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
-                    <%= bento_menu_item.label :quantity %><br>
-                    <%= bento_menu_item.text_field :quantity %><br>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %><br>
+                    <%= bento_menu_item.label :quantity %>
+                    <%= bento_menu_item.text_field :quantity %><br><br>
                 <% end %>
             <% end %>
     </div>
@@ -43,9 +43,9 @@
         <%= f.fields_for :bento_menu_items, @bento.bento_menu_items do |bento_menu_item| %>
                 <% if bento_menu_item.object.menu_item.item_type == 'Snack' || bento_menu_item.object.menu_item.item_type == 'Drink' %>
                     <%= bento_menu_item.hidden_field :menu_item_id %>
-                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %>
-                    <%= bento_menu_item.label :quantity %><br>
-                    <%= bento_menu_item.text_field :quantity %><br>
+                    <%= bento_menu_item.label bento_menu_item.object.menu_item.name %><br>
+                    <%= bento_menu_item.label :quantity %>
+                    <%= bento_menu_item.text_field :quantity %><br><br>
                 <% end %>
             <% end %>
     <br>
