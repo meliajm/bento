@@ -5,9 +5,10 @@ class ChargesController < ApplicationController
     end
     
     def create
+      stripe_charge = StripeChargesServices.new(charges_params, current_user).call
       # binding.pry
-      StripeChargesServices.new(charges_params, current_user).call
-      redirect_to new_charge_path
+      flash[:notice] = "Your card has been charged #{stripe_charge[:amount]}."
+      redirect_to bentoboxes_path
     end
   
     private
