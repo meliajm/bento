@@ -3,7 +3,6 @@ class StripeChargesServices
   DEFAULT_CURRENCY = 'usd'.freeze
   
   def initialize(params, user)
-    # binding.pry
     @stripe_email = params[:stripeEmail]
     @stripe_token = params[:stripeToken]
     @order = params[:order_id]
@@ -50,6 +49,7 @@ class StripeChargesServices
   end
 
   def order_amount
-    Order.find_by(id: 7).order_price * 100
+    # Order.find_by(id: params[:order_id]).order_price * 100
+    Order.find_by(id: order).order_price
   end
 end

@@ -12,7 +12,9 @@
 <%= button_to "Delete Your Order", order_path(@order), method: :delete %> 
 <br>
 <br>
-<%= button_to "Place Your Order", place_order_path, method: :post %>
+<%= button_to "Place Your Order", new_order_charge_path(@order), method: :get %>
+
+<%#= button_to "Place Your Order", place_order_path, method: :post %>
 
 
 

@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :users do 
     resources :orders, only: [:show, :index, :new]
   end
+
+  resources :orders do 
+    resources :charges, only: [:new, :create]
+  end
   
   resources :orders
   resources :bentoboxes
@@ -22,5 +26,5 @@ Rails.application.routes.draw do
   post '/orders/add_bento_to_order', to: 'orders#add_bento_to_order', as: 'add_bento'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :charges, only: [:new, :create]
+  # resources :charges, only: [:new, :create]
 end
