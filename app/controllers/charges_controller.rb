@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
     end
     
     def create
-      binding.pry
+      # binding.pry
       StripeChargesServices.new(charges_params, current_user).call
       redirect_to new_charge_path
     end

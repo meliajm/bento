@@ -50,6 +50,6 @@ class StripeChargesServices
   end
 
   def order_amount
-    Order.find_by(id: 7).order_price
+    Order.find_by(id: 7).order_price * 100
   end
 end
