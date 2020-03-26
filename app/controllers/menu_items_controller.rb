@@ -2,13 +2,21 @@ class MenuItemsController < ApplicationController
 
     before_action :set_menu_items, only: [:show, :edit, :update, :destroy]
 
+    # def index
+    #     @bento = Bentobox.find_by(id: params[:id])
+    #     @menu_items = MenuItem.all 
+    #     # @bento_menu_items = @bento.bento_menu_items
+    #     # @bento_menu_items = @menu_items.bento_menu_item
+    #     # binding.pry
+    #     # @zipped_array = @bento.menu_items.zip(@bento.bento_menu_items)
+    # end
+
     def index
         @bento = Bentobox.find_by(id: params[:id])
-        @menu_items = MenuItem.all 
-        # @bento_menu_items = @bento.bento_menu_items
-        # @bento_menu_items = @menu_items.bento_menu_item
-        # binding.pry
-        # @zipped_array = @bento.menu_items.zip(@bento.bento_menu_items)
+        #   @menu_item = MenuItem.where('menu_item_search LIKE ?', "%#{params[:menu_item_search]}%")
+        @menu_items = MenuItem.search(params[:query])
+          # binding.pry
+    
     end
 
     def show

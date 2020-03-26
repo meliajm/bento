@@ -1,4 +1,13 @@
+<h2>search</h2>
+
+<%= form_tag(menu_items_path, method: :get) do %>
+  Query menu items <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+
 <h3>Menu Items #index</h3>
+<%if @menu_items %>
 <% @menu_items.order_array_by_item_type.each do |menu_item| %>
     <div><%= link_to "#{menu_item.name}", menu_item_path(menu_item) %></div>
     <li>Price: <%= menu_item.price %></li>
@@ -11,3 +20,8 @@
     <% end %>
     <br>
 <% end %>
+    <% else %>
+    <%@menu_item%>
+
+<% end %>
+

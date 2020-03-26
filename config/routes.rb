@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :orders
   resources :bentoboxes
-  resources :menu_items, only: [:show, :index]
+  resources :menu_items#, only: [:show, :index]
   
   post '/destroy', to: 'orders#destroy'
   get '/destroy', to: 'orders#destroy'

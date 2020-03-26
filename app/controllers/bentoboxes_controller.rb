@@ -8,9 +8,6 @@ class BentoboxesController < ApplicationController
         MenuItem.all.each do |item|
             @bento.bento_menu_items.build(menu_item: item)
         end
-        # @bento_type_entree = @bento.bento_menu_items.each.menu_item.item_type == 'Entree'
-        # @bento_type_side = bento_menu_item.object.menu_item.item_type == 'Side'
-        # @bento_type_snack_drink = bento_menu_item.object.menu_item.item_type == 'Drink' || bento_menu_item.object.menu_item.item_type == 'Snack'
     end
 
     def create
@@ -32,19 +29,9 @@ class BentoboxesController < ApplicationController
         if current_user.id != @bento.user_id
             redirect_to bentobox_path(@bento)
         end
-        
-        # @menu_items = MenuItem.all.select { |menu_item| !@bento.menu_items.include?(menu_item) }
-        
-        # @menu_items
         MenuItem.all.each do |item|
             @bento.bento_menu_items.build(menu_item: item) if !@bento.menu_items.include?(item)
         end
-        
-        # MenuItem.all.each do |item|
-        #     if !@menu_items.include?(item)
-        #         @bento.bento_menu_items.build(menu_item: item)
-        #     end
-        # end
     end
     
     def update
